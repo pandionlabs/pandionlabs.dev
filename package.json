@@ -56,9 +56,11 @@
     "sanitize-html": "^2.17.0",
     "sass": "^1.89.0",
     "svgo": "^3.3.2",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "wrangler": "^4.18.0"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.5.3",
     "@lucide/astro": "^0.511.0",
     "@tailwindcss/vite": "^4.1.7",
     "accessible-astro-components": "^4.1.1"
