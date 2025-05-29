@@ -2,10 +2,11 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
-import Counter from '@components/Counter.astro'
-import ContentMedia from '@components/ContentMedia.astro'
-import ExternalLink from '@components/ExternalLink.astro'
-import { Accordion, AccordionItem, Avatar, AvatarGroup } from 'accessible-astro-components'
+import Team from '@components/Team.astro'
+
+import Simone from '../assets/images/team/simone.jpg'
+import Sam from '../assets/images/team/sam.png'
+import Anna from '../assets/images/team/anna.png'
 ---
 
 <DefaultLayout title="Pandion Labs - Integrated Nature Analysis">
@@ -46,19 +47,22 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup } from 'accessible-astro-
       <h2 class="mb-16 text-6xl">Who we are</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
         <div class="space-content">
-          <h3 class="text-2xl font-bold">SIMONE MASSARO</h3>
-          <p>MSc Forest and Ecosystem Sciences; BSc Forest and Natural Sciences</p>
-          <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
+          <Team profileImage={Simone} , name="Simone Massaro">
+            <p>MSc Forest and Ecosystem Sciences; BSc Forest and Natural Sciences</p>
+            <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
+          </Team>
         </div>
         <div class="space-content">
-          <h3 class="text-2xl font-bold">SAM HERNIMAN</h3>
-          <p>MSc Forestry and Remote Sensing; BSc Applied Ecology</p>
-          <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
+          <Team profileImage={Sam} name="Sam Herniman">
+            <p>MSc Forestry and Remote Sensing; BSc Applied Ecology</p>
+            <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
+          </Team>
         </div>
         <div class="space-content">
-          <h3 class="text-2xl font-bold">ANNA DODD</h3>
-          <p>MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science</p>
-          <p class="mt-4">10+ years communications and research experience</p>
+          <Team profileImage={Anna} name="Anna Dodd">
+            <p>MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science</p>
+            <p class="mt-4">10+ years communications and research experience</p>
+          </Team>
         </div>
       </div>
     </div>
@@ -69,26 +73,6 @@ import { Accordion, AccordionItem, Avatar, AvatarGroup } from 'accessible-astro-
         <h2 class="text-6xl">Interested in our Services?</h2>
         <p class="mb-8 text-2xl">Contact Us!</p>
         <p class="text-xl">or email us at <a href="mailto:contact@pandionlabs.dev">contact@pandionlabs.dev</a></p>
-
-        <form class="mt-8 grid w-full max-w-2xl grid-cols-1 gap-6">
-          <div>
-            <label for="name" class="mb-2 block">Name</label>
-            <input type="text" id="name" name="name" class="w-full rounded border p-2" required />
-          </div>
-          <div>
-            <label for="email" class="mb-2 block">Email Address</label>
-            <input type="email" id="email" name="email" class="w-full rounded border p-2" required />
-          </div>
-          <div>
-            <label for="company" class="mb-2 block">Company Name</label>
-            <input type="text" id="company" name="company" class="w-full rounded border p-2" />
-          </div>
-          <div>
-            <label for="message" class="mb-2 block">Message</label>
-            <textarea id="message" name="message" rows="5" class="w-full rounded border p-2" required></textarea>
-          </div>
-          <button type="submit" class="button">Send</button>
-        </form>
       </div>
     </div>
   </section>
