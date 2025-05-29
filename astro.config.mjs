@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url'
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: 'https://accessible-astro-starter.incluud.dev',
+  site: 'https://next.pandionlabs.dev',
   integrations: [mdx(), icon(), compress()],
   vite: {
     css: {
