@@ -8,6 +8,11 @@ Download and install [GitHub Desktop](https://desktop.github.com/download/) from
 
 If you have any issues, visit [this page](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) for help.
 
+### Sign into Github
+
+Follow [these instructions](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) to connect GitHub Desktop to your GitHub account (just do Part 1, not Part 2 or 3)
+
+
 
 <!-- On windows? 
 
