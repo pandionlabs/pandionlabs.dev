@@ -3,6 +3,7 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
 import Team from '@components/Team.astro'
+import CalEmbed from '@components/CalEmbed.astro'
 
 import Simone from '../assets/images/team/simone.jpg'
 import Sam from '../assets/images/team/sam.png'
@@ -71,17 +72,22 @@ import Anna from '../assets/images/team/anna.png'
     <div class="container">
       <div class="flex flex-col items-center gap-4 text-center">
         <h2 class="text-6xl">Interested in our Services?</h2>
-        <p class="mb-8 text-2xl">Contact Us!</p>
-        <p class="text-xl">or email us at <a href="mailto:contact@pandionlabs.dev">contact@pandionlabs.dev</a></p>
+        <p class="text-2xl">Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a></p>
+      </div>
+      <div>
+        <p class="text-center text-2xl">Or schedule a free consultation</p>
+      </div>
+      <div class="m-7">
+        <CalEmbed />
       </div>
     </div>
   </section>
-</DefaultLayout>
 
-<style>
-  .avatar {
-    border: 1px solid var(--border-color-subtle);
-    border-radius: var(--radius-md);
-    padding: var(--space-s);
-  }
-</style>
+  <style>
+    .avatar {
+      border: 1px solid var(--border-color-subtle);
+      border-radius: var(--radius-md);
+      padding: var(--space-s);
+    }
+  </style>
+</DefaultLayout>
