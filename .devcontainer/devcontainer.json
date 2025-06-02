@@ -1,0 +1,22 @@
+{
+  "name": "pandionlabs.dev Devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "orta.vscode-jest"],
+      "settings": {
+        "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "eslint.validate": ["typescript", "javascript"]
+      }
+    }
+  },
+  "postCreateCommand": "npm install -g npm@latest && npm install -g typescript eslint prettier jest && npm run dev",
+  "remoteUser": "node"
+}
