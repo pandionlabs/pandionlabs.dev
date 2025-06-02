@@ -1,104 +1,78 @@
-# Accessible Astro Starter
+# Pandion Labs website
 
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+This is the repo to build and deploy the Pandion Labs (https://pandionlabs.dev) website.
 
-![accessible-astro-starter](https://github.com/user-attachments/assets/01630a5b-10bb-4765-a291-74725fedc04f)
+# Guide for normal people
 
-A ready-to-use, SEO and accessibility-focused Astro starter template. Built with modern web standards and WCAG guidelines in mind, it provides a solid foundation for creating inclusive websites. Features Tailwind CSS 4 integration, comprehensive component library, color contrast checker, and typography with Atkinson Hyperlegible font for improved readability. Includes dynamic blog/portfolio pages with social sharing, and full MDX support.
+## Steps to get started the very first time
 
-[![LIVE DEMO](https://img.shields.io/badge/LIVE_DEMO-4ECCA3?style=for-the-badge&logo=astro&logoColor=black)](https://accessible-astro-starter.incluud.dev/) &nbsp;
-[![DOCUMENTATION](https://img.shields.io/badge/DOCUMENTATION-A682FF?style=for-the-badge&logo=astro&logoColor=black)](https://accessible-astro.incluud.dev/) &nbsp;
-[![Sponsor on Open Collective](https://img.shields.io/badge/Open%20Collective-7FADF2?style=for-the-badge&logo=opencollective&logoColor=white)](https://opencollective.com/incluud) &nbsp;
+### 1. Download Git
 
-## Our mission
+Download and install [GitHub Desktop](https://desktop.github.com/download/) from [here](https://desktop.github.com/download/)
 
-> Provide developers with accessible, easy-to-use components that make building inclusive web applications simpler and faster, without compromising on customization or performance.
+If you have any issues, visit [this page](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) for help.
 
-## (Accessibility) Features
+### 2. Sign into Github
 
-- Astro 5.7.5+
-- Tailwind CSS 4 support
-- TypeScript integration with path aliases for easier imports
-- Prettier integration with `prettier-plugin-astro` and `prettier-plugin-tailwind`
-- ESLint integration with strict accessibility settings for `eslint-plugin-jsx-a11y`
-- Markdown and MDX support with comprehensive examples and components
-- Modern OKLCH color system with automatic palette generation from primary/secondary colors
-- Atkinson Hyperlegible font for improved readability and accessibility
-- Lucide icon set via `astro-icon` for consistent, friendly icons
-- Excellent Lighthouse/PageSpeed scores
-- Accessible landmarks such as `header`, `main`, `footer`, `section` and `nav`
-- Outline focus indicator which works on dark and light backgrounds
-- Several `aria` attributes which provide a better experience for screen reader users
-- `[...page].astro` and `[post].astro` demonstrate the use of dynamic routes and provide a basic blog with breadcrumbs and pagination
-- `404.astro` provides a custom 404 error page which you can adjust to your needs
-- `Header.astro` component with optimized accessibility and design
-- `Footer.astro` component with informative content and links
-- `SkipLinks.astro` component to skip to either the main menu or the main content
-- `Navigation.astro` component with keyboard accessible (dropdown) navigation and highlighted menu item option
-- `ResponsiveToggle.astro` component with accessible responsive toggle functionality
-- `DarkMode.astro` component toggle with accessible button and a user system preferred color scheme setting
-- `SiteMeta.astro` SEO component for setting custom meta data on different pages
-- `.sr-only` utility class for screen reader only text content (hides text visually)
-- `prefers-reduced-motion` disables animations for users that have this preference turned on
-- Components including `ColorContrast.astro`, `BlockQuote.astro`, `BreakoutImage.astro`, `ExternalLink.astro`, `Logo.astro`, `SocialShares.astro`, and `PageHeader.astro`
-- Blog and portfolio pages with featured images, author details, social sharing, and breakout images
-- Accessibility Statement template page
-- Color Contrast Checker interactive page
-- Smooth micro-interactions and animations on hover, open and close states (respecting reduced motion preferences)
-- Comprehensive SCSS utility classes
-- CSS with logical properties and custom properties
-- Accessible button and hyperlink styling with clear focus states
-- Styled `<kbd>` element for keyboard shortcut documentation
+Follow [these instructions](https://docs.github.com/en/desktop/overview/getting-started-with-github-desktop) to connect GitHub Desktop to your GitHub account (just do Part 1, not Part 2 or 3)
 
-## Getting started
+### 3. Install Vs Code
 
-Clone this theme locally and run any of the following commands in your terminal:
+Install [Visual Studio Code](https://code.visualstudio.com/download) from [here](https://code.visualstudio.com/download)
+
+you also need to install the dev containers extensions. On the sidebar on the left click on the extensions icon and search for `devcontainers` (is from Microsoft) and install the extension.
+
+### 4. Clone repository
+
+Open VsCode and open the command palette by pressing `CMD + SHIFT + P` and type `Git: Clone` and press enter. Paste the following URL in the prompt: `https://github.com/pandionlabs/pandionlabs.dev`.
+Then need to select the folder where you want the code to live.
+
+## Run (Steps you do every time)
+
+### 1. Start local website
+
+open the project inside VsCode and press `CMD + SHIFT + P` and type `Dev Containers: Reopen in Container` and press enter.
+
+If this is the first time you do this it needs to install a lot of stuff and you may need to restart your computer, but it should guide you through the process on its own.
+
+### 2. Make your edits
+
+This is the fun part! Edit any file in the website and see a live preview of the result at [http://localhost:4321](http://localhost:4321)
+
+### 3. Commit your changes
+
+Use the git panel in VsCode to select your changes and commit them.
+
+### 4. Push your changes to a Pull Request (PR)
+
+Use the git panel in VsCode to push your changes to the remote repository.
+
+### 5. Merge the PR into main
+
+After another person has reviewed your changes and approved them, you can merge the PR into the main branch. This means that the changes will automatically be deployed to the **live** website.
+
+### For Nerds
+
+## Npm usage
+
+summary of main commands
 
 | Command           | Action                                       |
 | :---------------- | :------------------------------------------- |
 | `npm install`     | Installs dependencies                        |
 | `npm run dev`     | Starts local dev server at `localhost:4321`  |
 | `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
 
-## Accessible Astro projects
+# How is this done?
 
-- [Accessible Astro Starter](https://github.com/incluud/accessible-astro-starter): Fully accessible starter for kickstarting Astro projects, with Tailwind.
-- [Accessible Astro Components](https://github.com/incluud/accessible-astro-components/): Library of reusable, accessible components build for Astro.
-- [Accessible Astro Dashboard](https://github.com/incluud/accessible-astro-dashboard/): User-friendly dashboard interface with a login screen and widgets.
-- [Accessible Astro Docs](https://github.com/incluud/accessible-astro-docs): Comprehensive documentation for all Accessible Astro projects.
+## astro
 
-Check out our [roadmap](https://github.com/orgs/incluud/projects/4/views/1) to see what's coming next!
+We use [Astro](https://astro.build) as our static site generator. It's a fast, lightweight, and flexible framework that allows us to build content centered websites but also to add any interactions as needed.
 
-## Contributing
+## Accessible Astro
 
-We welcome contributions to improve the documentation! You can help by:
+We use the [Accessible Astro Starter](https://github.com/incluud/accessible-astro-starter) starting theme: Fully accessible starter for kickstarting Astro projects, with Tailwind.
 
-1. [Filing an issue](https://github.com/incluud/accessible-astro-starter/issues)
-2. [Submitting a pull request](https://github.com/incluud/accessible-astro-starter/pulls)
-3. [Starting a discussion](https://github.com/incluud/accessible-astro-starter/discussions)
-4. [Supporting on Open Collective](https://opencollective.com/incluud)
+This also uses [Accessible Astro Components](https://github.com/incluud/accessible-astro-components/).
 
-## Support this project
-
-Your support helps us cover basic costs and continue building accessible solutions for the Astro ecosystem. By becoming a sponsor, you're not just supporting code – you're helping create a more inclusive web for everyone. Every contribution, big or small, helps maintain and improve these accessibility-focused tools.
-
-[![Sponsor on Open Collective](https://img.shields.io/badge/Open%20Collective-7FADF2?style=for-the-badge&logo=opencollective&logoColor=white)](https://opencollective.com/incluud)
-
-## Together we make a difference
-
-We want to express our heartfelt gratitude to everyone who contributes to making the web more accessible:
-
-- **The Astro team** for creating an amazing static site generator and the wonderful Starlight theme
-- **Our contributors** who dedicate their time and expertise to improve these tools
-- **Our sponsors** who help make this project sustainable
-- **The web community** for embracing and promoting web accessibility
-- **You, the developer** for choosing to make your projects more accessible
-
-<a href="https://github.com/incluud/accessible-astro-starter/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=incluud/accessible-astro-starter" />
-</a><br /><br />
-
-Together, we're not just building documentation or components – we're creating a more inclusive and accessible web for everyone. Every contribution, whether it's code, documentation, bug reports, or feedback, helps move us closer to this goal. ✨
-
-Remember: Accessibility is not a feature, it's a fundamental right. Thank you for being part of this journey!
+Learn more about the project at [Accessible Astro Docs](https://github.com/incluud/accessible-astro-docs): Comprehensive documentation for all Accessible Astro projects.
