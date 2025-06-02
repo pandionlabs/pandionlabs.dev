@@ -3,7 +3,7 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
 import Team from '@components/Team.astro'
-import CalEmbed from '@components/CalEmbed.jsx'
+import CalEmbed from '@components/CalEmbed.astro'
 
 import Simone from '../assets/images/team/simone.jpg'
 import Sam from '../assets/images/team/sam.png'
@@ -78,7 +78,7 @@ import Anna from '../assets/images/team/anna.png'
         <p class="text-center text-2xl">Or schedule a free consultation</p>
       </div>
       <div class="m-7">
-        <CalEmbed client:idle />
+        <CalEmbed calLink="pandionlabs/consultation" />
       </div>
     </div>
   </section>

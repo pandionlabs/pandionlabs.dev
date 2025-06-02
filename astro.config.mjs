@@ -5,15 +5,13 @@ import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url'
 
-import cloudflare from '@astrojs/cloudflare';
-
-import react from '@astrojs/react';
+import cloudflare from '@astrojs/cloudflare'
 
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
   site: 'https://next.pandionlabs.dev',
-  integrations: [mdx(), icon(), compress(), react()],
+  integrations: [mdx(), icon(), compress()],
 
   vite: {
     css: {
