@@ -5,11 +5,14 @@ import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url'
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: 'https://accessible-astro-starter.incluud.dev',
+  site: 'https://next.pandionlabs.dev',
   integrations: [mdx(), icon(), compress()],
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -34,4 +37,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: cloudflare(),
 })

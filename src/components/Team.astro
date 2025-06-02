@@ -1,0 +1,9 @@
+---
+import { Card } from 'accessible-astro-components'
+
+const { profileImage, name } = Astro.props
+---
+
+<Card imageComponent={profileImage} title={name}>
+  <slot />
+</Card>

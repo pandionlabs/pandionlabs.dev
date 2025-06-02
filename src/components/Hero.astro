@@ -14,28 +14,42 @@ interface Props {
   src?: string
 }
 
-const { src = '/astronaut-hero-img.webp' }: Props = Astro.props
+const { src = '/forest-hero.png' }: Props = Astro.props
 ---
 
 <section class="hero my-24">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
+        <p class="text-center text-2xl md:text-left">A sustainable future with</p>
         <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">Accessible</span> Starter for Astro</slot>
+          <slot><span class="text-gradient">PANDION LABS</span></slot>
         </h1>
+        <h2 class="text-center text-4xl font-bold md:text-left">Integrated Nature Analysis</h2>
+        <p class="text-center text-xl md:text-left">
+          At Pandion Labs, we connect you to nature's systems, using data science and AI to make ecosystems data
+          accessible
+        </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
-          <a class="button has-icon" href="https://github.com/incluud/accessible-astro-starter">
-            <Icon name="lucide:star" />
-            Star on GitHub
+          <a class="button has-icon" href="#services">
+            <Icon name="lucide:info" />
+            Learn More
           </a>
-          <a class="button has-icon color-secondary" href="https://accessible-astro.incluud.dev/">
-            <Icon name="lucide:bookmark" />
-            Read the docs
+          <a class="button has-icon color-secondary" href="#contact">
+            <Icon name="lucide:mail" />
+            Contact Us
           </a>
         </div>
       </div>
-      <Image class="hidden lg:block" src={src} alt="" decoding="async" width={800} height={600} loading="eager" />
+      <Image
+        class="hidden lg:block"
+        src={src}
+        alt="Nature analysis visualization"
+        decoding="async"
+        width={800}
+        height={600}
+        loading="eager"
+      />
     </div>
   </div>
 </section>

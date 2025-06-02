@@ -31,3 +31,5 @@ package-lock.json
 
 # cursor rules
 .cursor/rules
+
+.wrangler
