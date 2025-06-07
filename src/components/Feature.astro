@@ -23,33 +23,19 @@ interface Props {
   linkTo?: string
 }
 
-const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo: url }: Props = Astro.props
+const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo }: Props = Astro.props
 const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
 ---
 
-{
-  url ? (
-    <a href={url} class={`feature flex gap-4 ${flexDirection}`}>
-      <Icon name={icon} />
-      <div class="content">
-        <h3 class="text-2xl font-bold">{title}</h3>
-        <p>
-          <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
-        </p>
-      </div>
-    </a>
-  ) : (
-    <div class={`feature flex gap-4 ${flexDirection}`}>
-      <Icon name={icon} />
-      <div class="content">
-        <h3 class="text-2xl font-bold">{title}</h3>
-        <p>
-          <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
-        </p>
-      </div>
-    </div>
-  )
-}
+<a href={linkTo} class={`feature flex gap-4 ${flexDirection}`}>
+  <Icon name={icon} />
+  <div class="content">
+    <h3 class="text-2xl font-bold">{title}</h3>
+    <p>
+      <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+    </p>
+  </div>
+</a>
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;

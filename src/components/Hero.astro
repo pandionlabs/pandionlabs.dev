@@ -15,7 +15,7 @@ interface Props {
 }
 ---
 
-<section class="hero my-10">
+<section class="hero my-10 mb-25">
   <div class="container">
     <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
@@ -39,28 +39,13 @@ interface Props {
         </div>
       </div>
       <div class="icon-container">
-        <Icon name="hero-icon" desc="Nature analysis visualization" width={700} height={550} is:inline />
+        <Icon name="hero-icon" desc="Nature analysis visualization" width={650} height={400} is:inline />
       </div>
     </div>
 
     <style lang="scss">
       h1 {
         text-wrap: unset;
-      }
-
-      .text-gradient {
-        background: linear-gradient(
-          315deg,
-          light-dark(var(--color-primary-300), var(--color-secondary-100)) 25%,
-          light-dark(var(--color-secondary-300), var(--color-primary-200))
-        );
-        background-clip: border-box;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .glow-svg {
-        filter: drop-shadow(0px 0px 8px rgba(0, 0, 255, 0.7));
       }
     </style>
   </div>

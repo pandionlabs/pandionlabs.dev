@@ -1,0 +1,20 @@
+.text-gradient {
+  background: linear-gradient(
+    315deg,
+    light-dark(var(--color-primary-300), var(--color-secondary-100)),
+    light-dark(var(--color-secondary-300), var(--color-primary-200))
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-gradient-light {
+  background: linear-gradient(
+    270deg,
+    light-dark(var(--color-primary-200), var(--color-secondary-100)) 30%,
+    light-dark(var(--color-secondary-200), var(--color-primary-200))
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
