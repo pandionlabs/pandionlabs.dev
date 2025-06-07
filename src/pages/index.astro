@@ -6,27 +6,31 @@ import Team from '@components/Team.astro'
 import CalEmbed from '@components/CalEmbed.astro'
 import GradientBackground from '@components/GradientBackground.astro'
 import LoremIpsum from '@components/LoremIpsum.astro'
+import { Link } from '@lucide/astro'
+import LineSeparator from '@components/LineSeparator.astro'
 ---
 
 <DefaultLayout title="Pandion Labs - Integrated Nature Analysis">
   <Hero />
-  <GradientBackground>
-    <h2 class="text-center text-3xl md:text-4xl">About Us</h2>
-    <p class="text-xl">
-      Pandion Labs is an applied research consultancy working at the intersection of data and nature. We advance nature
-      insights by integrating multiple remote-sensing datasets using data science and AI.
-    </p>
-    <p class="text-xl">
-      We provide tailored data processing, production and reporting support, with the aim of making data more accessible
-      and actionable. We work with various types of data, including: remote-sensing; LiDAR; imagery; citizen science. We
-      believe in taking an integrated view of nature to promote holistic decision-making.
-    </p>
-    <p class="text-xl">
-      We are a team of data scientists, ecologists and researchers building end-to-end solutions to inform
-      sustainability projects, from raw data to dissemination.
-    </p>
-  </GradientBackground>
-  <section class="container" id="services">
+  <section class="my-10" id="about">
+    <GradientBackground>
+      <h2 class="text-center text-3xl md:text-4xl">About Us</h2>
+      <p class="text-xl">
+        Pandion Labs is an applied research consultancy working at the intersection of data and nature. We advance
+        nature insights by integrating multiple remote-sensing datasets using data science and AI.
+      </p>
+      <p class="text-xl">
+        We provide tailored data processing, production and reporting support, with the aim of making data more
+        accessible and actionable. We work with various types of data, including: remote-sensing; LiDAR; imagery;
+        citizen science. We believe in taking an integrated view of nature to promote holistic decision-making.
+      </p>
+      <p class="text-xl">
+        We are a team of data scientists, ecologists and researchers building end-to-end solutions to inform
+        sustainability projects, from raw data to dissemination.
+      </p>
+    </GradientBackground>
+  </section>
+  <section class="container my-24" id="services">
     <h2 class="mb-16 text-6xl">Our key services</h2>
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
       <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science">
@@ -45,18 +49,17 @@ import LoremIpsum from '@components/LoremIpsum.astro'
       </Feature>
     </div>
   </section>
-  <section class="my-64" id="contact">
-    <div class="container">
-      <div class="flex flex-col items-center gap-4 text-center">
-        <h2 class="text-6xl">Interested in our services?</h2>
-        <p class="text-2xl">Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a></p>
-      </div>
-      <div>
-        <p class="text-center text-2xl">or schedule a free consultation</p>
-      </div>
-      <div class="m-7">
-        <CalEmbed calLink="pandionlabs/consultation" />
-      </div>
+  <LineSeparator />
+  <section class="container my-24" id="contact">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <h2 class="text-6xl">Interested in our services?</h2>
+      <p class="text-2xl">Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a></p>
+    </div>
+    <div>
+      <p class="text-center text-2xl">or schedule a free consultation</p>
+    </div>
+    <div class="m-7">
+      <CalEmbed calLink="pandionlabs/consultation" />
     </div>
   </section>
 
