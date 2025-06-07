@@ -4,78 +4,55 @@ import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
 import Team from '@components/Team.astro'
 import CalEmbed from '@components/CalEmbed.astro'
-
-import Simone from '../assets/images/team/simone.jpg'
-import Sam from '../assets/images/team/sam.png'
-import Anna from '../assets/images/team/anna.png'
+import GradientBackground from '@components/GradientBackground.astro'
+import LoremIpsum from '@components/LoremIpsum.astro'
 ---
 
 <DefaultLayout title="Pandion Labs - Integrated Nature Analysis">
   <Hero />
-  <section class="my-64">
-    <div class="container">
-      <p class="mb-8 text-xl">
-        Pandion Labs is an applied research consultancy working at the intersection of data and nature. We advance
-        nature insights by integrating multiple remote-sensing datasets using data science and AI.
-      </p>
-      <p class="mb-8 text-xl">
-        We provide tailored data processing, production and reporting support, with the aim of making data more
-        accessible and actionable. We work with various types of data, including: remote-sensing; LiDAR; imagery;
-        citizen science. We believe in taking an integrated view of nature to promote holistic decision-making.
-      </p>
-      <p class="mb-16 text-xl">
-        We are a team of data scientists, ecologists and researchers building end-to-end solutions to inform
-        sustainability projects, from raw data to dissemination.
-      </p>
-
-      <h2 class="mb-16 text-6xl" id="services">Our key services</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="lucide:trees" title="Forest inventories and health analysis">
-          Quantification of tree species, forest biomass, diversity and health from integrated remote-sensing data.
-        </Feature>
-        <Feature icon="lucide:map" title="Biodiversity mapping with species distribution models">
-          Biodiversity mapping to locate plant and animal species, informing landowner and developer decision-making to
-          protect nature.
-        </Feature>
-        <Feature icon="lucide:bar-chart" title="Interactive data dashboards for nature monitoring">
-          Tailored data reporting and visualisation to suit various reporting requirements.
-        </Feature>
-      </div>
+  <GradientBackground>
+    <h2 class="text-center text-3xl md:text-4xl">About Us</h2>
+    <p class="text-xl">
+      Pandion Labs is an applied research consultancy working at the intersection of data and nature. We advance nature
+      insights by integrating multiple remote-sensing datasets using data science and AI.
+    </p>
+    <p class="text-xl">
+      We provide tailored data processing, production and reporting support, with the aim of making data more accessible
+      and actionable. We work with various types of data, including: remote-sensing; LiDAR; imagery; citizen science. We
+      believe in taking an integrated view of nature to promote holistic decision-making.
+    </p>
+    <p class="text-xl">
+      We are a team of data scientists, ecologists and researchers building end-to-end solutions to inform
+      sustainability projects, from raw data to dissemination.
+    </p>
+  </GradientBackground>
+  <section class="container" id="services">
+    <h2 class="mb-16 text-6xl">Our key services</h2>
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science">
+        <LoremIpsum />
+      </Feature>
+      <Feature icon="lucide:trees" title="Code for Forest">
+        <LoremIpsum />
+      </Feature>
+      <Feature icon="lucide:flower-2" title="Code for Biodiversity">
+        <LoremIpsum />
+      </Feature>
     </div>
-  </section>
-  <section class="my-64" id="team">
-    <div class="container">
-      <h2 class="mb-16 text-6xl">Who we are</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-        <div class="space-content">
-          <Team profileImage={Simone} , name="Simone Massaro">
-            <p>MSc Forest and Ecosystem Sciences; BSc Forest and Natural Sciences</p>
-            <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
-          </Team>
-        </div>
-        <div class="space-content">
-          <Team profileImage={Sam} name="Sam Herniman">
-            <p>MSc Forestry and Remote Sensing; BSc Applied Ecology</p>
-            <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
-          </Team>
-        </div>
-        <div class="space-content">
-          <Team profileImage={Anna} name="Anna Dodd">
-            <p>MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science</p>
-            <p class="mt-4">10+ years communications and research experience</p>
-          </Team>
-        </div>
-      </div>
+    <div class="my-12">
+      <Feature icon="lucide:workflow" title="Bespoke tools for your needs" direction="horizontal">
+        <LoremIpsum />
+      </Feature>
     </div>
   </section>
   <section class="my-64" id="contact">
     <div class="container">
       <div class="flex flex-col items-center gap-4 text-center">
-        <h2 class="text-6xl">Interested in our Services?</h2>
+        <h2 class="text-6xl">Interested in our services?</h2>
         <p class="text-2xl">Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a></p>
       </div>
       <div>
-        <p class="text-center text-2xl">Or schedule a free consultation</p>
+        <p class="text-center text-2xl">or schedule a free consultation</p>
       </div>
       <div class="m-7">
         <CalEmbed calLink="pandionlabs/consultation" />

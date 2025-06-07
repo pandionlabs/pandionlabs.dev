@@ -15,28 +15,52 @@ interface Props {
    * The title to display
    */
   title: string
+  /* Direction: Icon above or on same line of the text */
+  direction?: 'horizontal' | 'vertical'
+  /**
+   * Optional URL to make the feature clickable
+   */
+  linkTo?: string
 }
 
-const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
+const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo: url }: Props = Astro.props
+const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
 ---
 
-<div class="feature flex flex-col gap-4">
-  <Icon name={icon} />
-  <div class="content">
-    <h3 class="text-2xl font-bold">{title}</h3>
-    <p>
-      <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
-    </p>
-  </div>
-</div>
+{
+  url ? (
+    <a href={url} class={`feature flex gap-4 ${flexDirection}`}>
+      <Icon name={icon} />
+      <div class="content">
+        <h3 class="text-2xl font-bold">{title}</h3>
+        <p>
+          <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+        </p>
+      </div>
+    </a>
+  ) : (
+    <div class={`feature flex gap-4 ${flexDirection}`}>
+      <Icon name={icon} />
+      <div class="content">
+        <h3 class="text-2xl font-bold">{title}</h3>
+        <p>
+          <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+        </p>
+      </div>
+    </div>
+  )
+}
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;
 
   .feature {
+    display: flex;
     position: relative;
     padding: var(--space-l);
     inline-size: calc(100% - var(--space-l));
+    color: inherit;
+    text-decoration: none;
 
     > * {
       position: relative;
@@ -55,6 +79,7 @@ const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
 
     &::before {
       z-index: 1;
+      transition: border-width 0.2s ease;
       inset: 0;
       box-shadow: 0 0 0 6px var(--color-neutral-100);
       border: 3px solid var(--color-neutral-700);
@@ -67,6 +92,14 @@ const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
       inset: var(--space-m) -0.85rem -0.85rem 1rem;
       border-radius: var(--radius-l);
       background-color: var(--link-color);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &::before {
+        border-width: 6px;
+      }
     }
   }
 
