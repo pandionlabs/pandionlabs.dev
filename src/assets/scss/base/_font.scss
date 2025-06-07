@@ -21,6 +21,27 @@
   font-display: swap;
 }
 
+// Open Sans Variable Font Faces
+@font-face {
+  font-style: normal;
+  font-weight: 100 900;
+  src:
+    local('Open Sans Variable'),
+    url('/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-family: 'Open Sans';
+  font-display: swap;
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 100 900;
+  src:
+    local('Open Sans Variable Italic'),
+    url('/fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-family: 'Open Sans';
+  font-display: swap;
+}
+
 @layer base {
   p {
     text-wrap: pretty;
