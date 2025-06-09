@@ -1,0 +1,51 @@
+---
+import CallToAction from '@components/CallToAction.astro'
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import LoremIpsum from '@components/LoremIpsum.astro'
+import ServicesHero from '@components/ServicesHero.astro'
+import FeaturesList from '@components/FeaturesList.astro'
+
+const heroIcons = [
+  { name: 'lucide:trees' },
+  { name: 'lucide:leaf' },
+  { name: 'lucide:sprout' },
+  { name: 'lucide:area-chart' },
+]
+
+const features = [
+  { iconName: 'lucide:package', text: 'Package and clean your code for publication' },
+  { iconName: 'lucide:bug-off', text: 'Write tests to automatically find bugs' },
+  { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
+  { iconName: 'lucide:layers', text: "Structure your code so it's easier to maintain in the long-term" },
+  { iconName: 'lucide:bar-chart-2', text: 'Support with data analysis, modelling, statistics and AI methods' },
+  { iconName: 'lucide:pie-chart', text: 'Support with data visualisation' },
+]
+---
+
+<DefaultLayout title="Code for Forest">
+  <ServicesHero pretitle="Code for" title="FOREST" icons={heroIcons}>
+    Elevating <span class="highlight-word">environmental research</span> through <span class="highlight-word">expert coding</span>
+    and data analysis.
+  </ServicesHero>
+
+  <section class="container mt-12">
+    <p>
+      We partner with environmental and life scientists to enhance your research code. Drawing from our deep
+      scientific and coding expertise, we provide research software engineering to transform your analyses into
+      robust, reproducible R packages or Python modules. We focus on improving the quality, speed, and
+      long-term maintainability of your code, bridging the gap between cutting-edge software engineering and
+      vital forest science.
+    </p>
+
+    <FeaturesList features={features} />
+  </section>
+
+  <section id="about us" class="container my-8">
+    <h2>About Us</h2>
+    <p>
+      Our values and <LoremIpsum n={30} />
+    </p>
+  </section>
+
+  <CallToAction />
+</DefaultLayout>

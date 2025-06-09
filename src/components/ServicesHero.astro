@@ -1,0 +1,99 @@
+---
+import { Icon } from 'astro-icon/components'
+
+/**
+ * Interface for individual icon details.
+ */
+interface IconDetail {
+  /** The name of the icon (e.g., from an icon pack recognized by astro-icon). */
+  name: string
+  /** The width of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). Defaults to 24 if not provided. */
+  width?: string | number
+  /** The height of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). Defaults to 24 if not provided. */
+  height?: string | number
+  /** Optional CSS class to apply to the icon's container div for specific styling. */
+  class?: string
+}
+
+/**
+ * Props for the ServicesHero component.
+ *
+ * The content for the subtitle area is passed as children (default slot) to this component.
+ * To highlight specific words within the subtitle, wrap them in a `<span>` with the class `highlight-word`.
+ * Example usage:
+ * ```astro
+ * <ServicesHero pretitle="Our" title="Services" icons={[...]}>
+ *   This is our <span class="highlight-word">amazing</span> subtitle content.
+ * </ServicesHero>
+ * ```
+ */
+export interface Props {
+  /** The text displayed above the main title, often smaller and less emphasized. */
+  pretitle: string
+  /** The main heading of the hero section, typically large and prominent. */
+  title: string
+  // subtitle: string; // Subtitle is now handled by the default slot (children)
+  /** An array of icon objects to be displayed. Each object should conform to the IconDetail interface. */
+  icons: IconDetail[]
+}
+
+const { pretitle, title, icons } = Astro.props
+---
+
+<section class="flex overflow-hidden py-12">
+  <div class="container">
+    <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
+      <div class="flex flex-col items-start text-left">
+        <h2 class="text-2xl font-light tracking-wide md:text-3xl">{pretitle}</h2>
+        <h1 class="text-gradient-light text-6xl font-bold md:text-7xl">{title}</h1>
+        <div class="subtitle-text mt-4 max-w-md text-lg">
+          <slot />
+        </div>
+      </div>
+
+      {
+        icons && icons.length > 0 && (
+          <div class="flex items-center justify-end gap-6">
+            {icons.map((icon) => (
+              <div class={icon.class || ''}>
+                <Icon name={icon.name} width={icon.width ?? 120} height={icon.height ?? 120} />
+              </div>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  [data-icon] {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(var(--brand-primary-rgb), 0.2));
+    color: var(--brand-primary);
+    font-size: 2rem;
+  }
+
+  .subtitle-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+
+  /* Assuming highlight-word might be part of the subtitle, so keeping its style definition */
+  .subtitle-text :global(.highlight-word) {
+    position: relative;
+    font-weight: 600;
+  }
+
+  .subtitle-text :global(.highlight-word::after) {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border-radius: 1px;
+    background: var(--brand-primary);
+    width: 100%;
+    height: 2px;
+    content: '';
+  }
+</style>

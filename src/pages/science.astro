@@ -1,145 +1,52 @@
 ---
 import CallToAction from '@components/CallToAction.astro'
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import { Icon } from 'astro-icon/components'
 import LoremIpsum from '@components/LoremIpsum.astro'
+import ServicesHero from '@components/ServicesHero.astro'
+import FeaturesList from '@components/FeaturesList.astro'
+
+const heroIcons = [
+  { name: 'lucide:flask-conical' },
+  { name: 'lucide:code' },
+  { name: 'lucide:bar-chart-2' },
+  { name: 'lucide:database' },
+]
+
+const features = [
+  { iconName: 'lucide:package', text: 'Package and clean your code for publication' },
+  { iconName: 'lucide:flask-conical', text: 'Write tests to automatically identify bugs' },
+  { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
+  { iconName: 'lucide:layers', text: "Structure your code so it's easy to maintain in the long-term" },
+  { iconName: 'lucide:bar-chart-2', text: 'Support with data analysis, modelling, statistics and machine learning' },
+  { iconName: 'lucide:pie-chart', text: 'Production of beautiful data visualisations' },
+]
 ---
 
 <DefaultLayout title="Code for Science">
-  <section class="flex overflow-hidden py-12">
-    <div class="container">
-      <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
-        <div class="flex flex-col items-start text-left">
-          <h2 class="text-2xl font-light tracking-wide md:text-3xl">Code for</h2>
-          <h1 class="text-gradient-light text-6xl font-bold md:text-7xl">SCIENCE</h1>
-          <p class="subtitle-text mt-4 max-w-md text-lg">
-            <span class="highlight-word">Bridging</span> the gap between scientific <span class="highlight-word"
-              >research</span
-            > and <span class="highlight-word">software</span> engineering excellence
-          </p>
-        </div>
-
-        <div class="flex items-center justify-end gap-6">
-          <div class="flask-icon">
-            <Icon name="lucide:flask-conical" width="120" height="120" />
-          </div>
-          <div class="code-brackets">
-            <Icon name="lucide:code" width="180" height="180" />
-          </div>
-          <div class="chart-icon">
-            <Icon name="lucide:bar-chart-2" width="120" height="120" />
-          </div>
-          <div class="database-icon">
-            <Icon name="lucide:database" width="120" height="120" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ServicesHero pretitle="Code for" title="SCIENCE" icons={heroIcons}>
+    <span class="highlight-word">Bridging</span> the gap between scientific <span class="highlight-word">research</span>
+    and <span class="highlight-word">software</span> engineering excellence
+  </ServicesHero>
 
   <section class="container mt-12">
     <p>
-      Open science is no longer an option in the scientific world.
-      Our network of environmental and life scientists build the tools you need to solve the world's biggest scientific questions in an open and reproducible way.
-      Drawing from our scientific and coding backgrounds, we provide research software engineering to
-      transform your scientific code into reproducible R packages or Python modules. We improve the speed, quality, and reproducibility of 
-      your code; helping you bridge the gap between your scientific research and the latest innovations in software engineering.
+      Open science is no longer an option in the scientific world. Our network of environmental and life scientists
+      build the tools you need to solve the world's biggest scientific questions in an open and reproducible way.
+      Drawing from our scientific and coding backgrounds, we provide research software engineering to transform your
+      scientific code into reproducible R packages or Python modules. We improve the speed, quality, and reproducibility
+      of your code; helping you bridge the gap between your scientific research and the latest innovations in software
+      engineering.
     </p>
 
-    <ul class="feature-list mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
-      <li class="flex items-start gap-3">
-        <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name="lucide:package" width="24" height="24" />
-        </span>
-        <span>Package and clean your code for publication</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name="lucide:flask-conical" width="24" height="24" />
-        </span>
-        <span>Write tests to automatically identify bugs</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name="lucide:zap" width="24" height="24" />
-        </span>
-        <span>Improve efficiency and speed</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name="lucide:layers" width="24" height="24" />
-        </span>
-        <span>Structure your code so it's easy to maintain in the long-term</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name="lucide:bar-chart-2" width="24" height="24" />
-        </span>
-        <span>Support with data analysis, modelling, statistics and machine learning</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name="lucide:pie-chart" width="24" height="24" />
-        </span>
-        <span>Production of beautiful data visualisations</span>
-      </li>
-    </ul>
+    <FeaturesList features={features} />
   </section>
 
   <section id="about us" class="container my-8">
     <h2>About Us</h2>
     <p>
-      Our values and <LoremIpsum n="30" />
+      Our values and <LoremIpsum n={30} />
     </p>
   </section>
 
   <CallToAction />
 </DefaultLayout>
-
-<style>
-  [data-icon] {
-    color: var(--brand-primary);
-    font-size: 2rem;
-  }
-
-  .feature-list {
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .feature-icon [data-icon] {
-    color: var(--brand-primary);
-    font-size: 1.8rem;
-  }
-
-  .code-brackets [data-icon],
-  .flask-icon [data-icon],
-  .chart-icon [data-icon],
-  .database-icon [data-icon] {
-    opacity: 0.7;
-    filter: drop-shadow(0 0 10px rgba(var(--brand-primary-rgb), 0.2));
-    color: var(--brand-primary);
-  }
-
-  .subtitle-text {
-    font-size: 1.1em;
-    line-height: 1.6;
-    letter-spacing: 0.01em;
-  }
-
-  .highlight-word {
-    position: relative;
-    font-weight: 600;
-  }
-
-  .highlight-word::after {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    border-radius: 1px;
-    background: var(--brand-primary);
-    width: 100%;
-    height: 2px;
-    content: '';
-  }
-</style>

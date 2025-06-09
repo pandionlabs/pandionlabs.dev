@@ -1,0 +1,51 @@
+---
+import CallToAction from '@components/CallToAction.astro'
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import LoremIpsum from '@components/LoremIpsum.astro'
+import ServicesHero from '@components/ServicesHero.astro'
+import FeaturesList from '@components/FeaturesList.astro'
+
+const heroIcons = [
+  { name: 'lucide:database' },
+  { name: 'lucide:app-window' },
+  { name: 'lucide:code' },
+  { name: 'lucide:blocks' },
+]
+
+const features = [
+  { iconName: 'lucide:package', text: 'Package and clean your code for publication' },
+  { iconName: 'lucide:bug-off', text: 'Write tests to automatically find bugs' },
+  { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
+  { iconName: 'lucide:layers', text: "Structure your code so it's easier to maintain in the long-term" },
+  { iconName: 'lucide:bar-chart-2', text: 'Support with data analysis, modelling, statistics and AI methods' },
+  { iconName: 'lucide:pie-chart', text: 'Support with data visualisation' },
+]
+---
+
+<DefaultLayout title="Bespoke Tools">
+  <ServicesHero pretitle="Developing" title="BESPOKE TOOLS" icons={heroIcons}>
+    Crafting <span class="highlight-word">custom software</span>, apps, and <span class="highlight-word">APIs</span>
+    tailored to your unique <span class="highlight-word">research needs</span>.
+  </ServicesHero>
+
+  <section class="container mt-12">
+    <p>
+      Our network of environmental and life scientists will improve your code and build any solution you need. Code and
+      data analysis enables modern and open science. Drawing from our scientific and coding backgrounds, we support you
+      with research software engineering to enhance your code, including reproducible R packages or Python modules. We
+      improve code quality and the research experience. Bridging the gap between the latest innovations in software
+      engineering and scientific research.
+    </p>
+
+    <FeaturesList features={features} />
+  </section>
+
+  <section id="about us" class="container my-8">
+    <h2>About Us</h2>
+    <p>
+      Our values and <LoremIpsum n={30} />
+    </p>
+  </section>
+
+  <CallToAction />
+</DefaultLayout>

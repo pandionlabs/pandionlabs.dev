@@ -1,0 +1,39 @@
+---
+import { Icon } from 'astro-icon/components'
+
+export interface FeatureItem {
+  iconName: string
+  text: string
+}
+
+export interface Props {
+  features: FeatureItem[]
+}
+
+const { features } = Astro.props
+---
+
+<ul class="feature-list mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+  {
+    features.map((feature) => (
+      <li class="flex items-start gap-3">
+        <span class="feature-icon mt-1 flex-shrink-0">
+          <Icon name={feature.iconName} width="24" height="24" />
+        </span>
+        <span>{feature.text}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .feature-list {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .feature-icon [data-icon] {
+    color: var(--brand-primary);
+    font-size: 1.8rem;
+  }
+</style>
