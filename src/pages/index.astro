@@ -16,8 +16,8 @@ import LineSeparator from '@components/LineSeparator.astro'
     <GradientBackground>
       <h2 class="text-center text-3xl md:text-4xl">About us</h2>
       <p class="text-xl">
-        Pandion Labs is an applied research consultancy that believes that better code and data are 
-        the solution to some of nature's toughest challenges. 
+        Pandion Labs is an applied research consultancy that believes that better code and data are the solution to some
+        of nature's toughest challenges.
       </p>
       <p class="text-xl">
         We provide tailored data processing, production, and reporting support, with the aim of making data more
@@ -31,24 +31,23 @@ import LineSeparator from '@components/LineSeparator.astro'
   </section>
   <section class="container my-24" id="services">
     <h2 class="mb-16 text-6xl">Our services</h2>
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-      <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science">
-        <LoremIpsum />
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
+      <Feature icon="lucide:trees" title="Code for Forests" direction="horizontal">
+        <LoremIpsum n={20} />
       </Feature>
-      <Feature icon="lucide:trees" title="Code for Forests">
-        <LoremIpsum />
+      <Feature icon="lucide:flower-2" title="Code for Biodiversity" direction="horizontal">
+        <LoremIpsum n={20} />
       </Feature>
-      <Feature icon="lucide:flower-2" title="Code for Biodiversity">
-        <LoremIpsum />
+      <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science" direction="horizontal">
+        <LoremIpsum n={20} />
       </Feature>
-    </div>
-    <div class="my-12">
       <Feature icon="lucide:workflow" title="Custom tools" direction="horizontal">
-        <LoremIpsum />
+        <LoremIpsum n={20} />
       </Feature>
     </div>
+    <div class="my-12"></div>
   </section>
-  <LineSeparator />
+  <LineSeparator height="4px" />
   <section class="container my-24" id="contact">
     <div class="flex flex-col items-center gap-4 text-center">
       <h2 class="text-6xl">Interested in our services?</h2>

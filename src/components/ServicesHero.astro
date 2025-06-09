@@ -40,7 +40,7 @@ export interface Props {
 const { pretitle, title, icons } = Astro.props
 ---
 
-<section class="flex overflow-hidden py-12">
+<section class="mb-0 flex overflow-hidden py-12 pb-4">
   <div class="container">
     <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
       <div class="flex flex-col items-start text-left">
@@ -53,7 +53,7 @@ const { pretitle, title, icons } = Astro.props
 
       {
         icons && icons.length > 0 && (
-          <div class="flex items-center justify-end gap-6">
+          <div class="flex items-center justify-center gap-6">
             {icons.map((icon) => (
               <div class={icon.class || ''}>
                 <Icon name={icon.name} width={icon.width ?? 120} height={icon.height ?? 120} />

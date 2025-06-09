@@ -4,6 +4,7 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import LoremIpsum from '@components/LoremIpsum.astro'
 import ServicesHero from '@components/ServicesHero.astro'
 import FeaturesList from '@components/FeaturesList.astro'
+import LineSeparator from '@components/LineSeparator.astro'
 
 const heroIcons = [
   { name: 'lucide:flask-conical' },
@@ -23,10 +24,11 @@ const features = [
 ---
 
 <DefaultLayout title="Code for Science">
-  <ServicesHero pretitle="Code for" title="SCIENCE" icons={heroIcons}>
-    <span class="highlight-word">Bridging</span> the gap between scientific <span class="highlight-word">research</span>
-    and <span class="highlight-word">software</span> engineering excellence
-  </ServicesHero>
+  <ServicesHero pretitle="Code for" title="SCIENCE" icons={heroIcons} />
+  <div class="container mb-16 p-0 text-3xl italic">
+    Bridging the gap between <span class="highlight-word">scientific research</span>
+    and <span class="highlight-word">software engineering </span> excellence
+  </div>
 
   <section class="container mt-12">
     <p>
@@ -41,12 +43,36 @@ const features = [
     <FeaturesList features={features} />
   </section>
 
+  <div class="my-12">
+    <LineSeparator />
+  </div>
   <section id="about us" class="container my-8">
-    <h2>About us</h2>
+    <h2>Who we are</h2>
     <p>
-      Our values and <LoremIpsum n={30} />
+      At Pandion Labs, we are a team of data scientists, software engineers, ecologists, and researchers building
+      end-to-end solutions to inform sustainability projects, from raw data, processing to dissemination. We support
+      with precision forestry, biodiversity monitoring and quantitative ecology throughout the data process.
     </p>
   </section>
 
   <CallToAction />
 </DefaultLayout>
+
+<style>
+  /* Assuming highlight-word might be part of the subtitle, so keeping its style definition */
+  .highlight-word {
+    position: relative;
+    font-weight: 600;
+  }
+
+  .highlight-word::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border-radius: 1px;
+    background: var(--brand-primary);
+    width: 100%;
+    height: 2px;
+    content: '';
+  }
+</style>
