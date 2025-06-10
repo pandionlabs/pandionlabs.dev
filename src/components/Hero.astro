@@ -44,7 +44,7 @@ const icons: IconDetail[] = [
     <div class="grid grid-cols-1 items-start gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
         <h1 class="justify-start text-center text-6xl font-bold md:text-left lg:text-7xl">
-          <span>PANDION LABS</span>
+          <span class="text-gradient-light">PANDION LABS</span>
         </h1>
         <h2 class="text-center text-4xl font-bold md:text-left">Code for Climate. Data for Nature.</h2>
         <p class="text-center text-xl md:text-left">
@@ -88,7 +88,7 @@ const icons: IconDetail[] = [
         transition:
           transform var(--animation-speed-fast, 0.2s) ease-in-out,
           box-shadow var(--animation-speed-fast, 0.2s) ease-in-out; // Using variable
-        box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12)); // Using variable
+        /* box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12)); // Using variable */
         border-radius: var(--radius-l, 0.75rem); // Using variable from _root.scss with fallback
         padding: 1.25rem;
       }
@@ -103,8 +103,13 @@ const icons: IconDetail[] = [
         color: var(--color-primary-200);
       }
       .icon-secondary {
+        /* filter: grayscale(100%); */
         /* background-color: var(--color-secondary-100); */
-        color: var(--color-secondary-200);
+        /* color: var(--color-secondary-200); */
+      }
+
+      .icon-wrapper svg {
+        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
       }
     </style>
   </div>
