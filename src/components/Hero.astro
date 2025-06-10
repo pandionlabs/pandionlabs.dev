@@ -18,14 +18,14 @@ const iconBigSize = {
 }
 
 const iconSmallSize = {
-  width: 90,
-  height: 90,
+  width: 80,
+  height: 80,
 }
 
 const icons: IconDetail[] = [
   // This will be rendered in a 3x3 grid
   // First Row
-  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  { name: 'lucide:bar-chart', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
   { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary' },
   { name: 'lucide:map', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
   // Second Row
@@ -105,7 +105,7 @@ const icons: IconDetail[] = [
       .icon-secondary {
         /* filter: grayscale(100%); */
         /* background-color: var(--color-secondary-100); */
-        /* color: var(--color-secondary-200); */
+        color: var(--color-secondary-200);
       }
 
       .icon-wrapper svg {
