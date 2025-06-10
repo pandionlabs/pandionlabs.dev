@@ -1,28 +1,52 @@
 ---
 import { Icon } from 'astro-icon/components'
-import { Image } from 'astro:assets'
 
-/**
- * Hero Component
- *
- * @description A component that displays a hero section with a title, description, and image
- */
-interface Props {
-  /**
-   * The source URL for the image
-   */
-  src?: string
+interface IconDetail {
+  /** The name of the icon (e.g., from an icon pack recognized by astro-icon). */
+  name: string
+  /** The width of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). */
+  width?: string | number
+  /** The height of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). */
+  height?: string | number
+  /** Optional CSS class to apply to the icon's container div for specific styling. */
+  class?: string
 }
+
+const iconBigSize = {
+  width: 110,
+  height: 100,
+}
+
+const iconSmallSize = {
+  width: 90,
+  height: 90,
+}
+
+const icons: IconDetail[] = [
+  // This will be rendered in a 3x3 grid
+  // First Row
+  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary' },
+  { name: 'lucide:map', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  // Second Row
+  { name: 'lucide:flower-2', ...iconBigSize, class: 'icon-wrapper icon-primary' },
+  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  { name: 'lucide:bug', ...iconBigSize, class: 'icon-wrapper icon-primary' },
+  // Third Row
+  { name: 'lucide:laptop', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  { name: 'lucide:bird', ...iconBigSize, class: 'icon-wrapper icon-primary' },
+  { name: 'lucide:database', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+]
 ---
 
 <section class="hero my-10 mb-25">
   <div class="container">
-    <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
+    <div class="grid grid-cols-1 items-start gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-center text-6xl md:text-left lg:text-8xl">
-          <slot><span class="text-gradient">PANDION LABS</span></slot>
+        <h1 class="justify-start text-center text-6xl font-bold md:text-left lg:text-8xl">
+          <span class="text-gradient-light">PANDION LABS</span>
         </h1>
-        <h2 class="text-center text-4xl font-bold md:text-left">Code for Climate. Data for Nature</h2>
+        <h2 class="text-center text-4xl font-bold md:text-left">Code for Climate. Data for Nature.</h2>
         <p class="text-center text-xl md:text-left">
           We connect you to nature's systems by bridging the gap between scientific research and software engineering
         </p>
@@ -38,13 +62,49 @@ interface Props {
         </div>
       </div>
       <div class="icon-container">
-        <Icon name="hero-icon" desc="Nature analysis visualization" width={650} height={400} is:inline />
+        <div class="grid grid-cols-3 grid-rows-3 items-center justify-center gap-4">
+          {
+            icons.map((icon) => (
+              <div class={icon.class || ''}>
+                <Icon name={icon.name} width={icon.width} height={icon.height} />
+              </div>
+            ))
+          }
+        </div>
+        <!-- <Icon name="hero-icon" desc="Nature analysis visualization" width={650} height={400} is:inline /> -->
       </div>
     </div>
 
     <style lang="scss">
       h1 {
         text-wrap: unset;
+      }
+
+      .icon-wrapper {
+        /* display: flex; */
+        /* justify-content: center;
+        align-items: center; */
+        place-self: center;
+        transition:
+          transform var(--animation-speed-fast, 0.2s) ease-in-out,
+          box-shadow var(--animation-speed-fast, 0.2s) ease-in-out; // Using variable
+        box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12)); // Using variable
+        border-radius: var(--radius-l, 0.75rem); // Using variable from _root.scss with fallback
+        padding: 1.25rem;
+      }
+
+      .icon-wrapper:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: var(--elevation-3, 0 10px 20px rgba(0 0 0 / 0.15));
+      }
+
+      .icon-primary {
+        /* background-color: var(--color-primary-100); */
+        color: var(--color-primary-200);
+      }
+      .icon-secondary {
+        /* background-color: var(--color-secondary-100); */
+        color: var(--color-secondary-200);
       }
     </style>
   </div>
