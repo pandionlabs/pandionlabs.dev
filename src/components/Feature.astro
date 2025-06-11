@@ -27,10 +27,12 @@ const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo }: 
 const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
 ---
 
-<a href={linkTo} class={`feature flex gap-4 ${flexDirection}`}>
-  <Icon name={icon} />
-  <div class="content">
-    <h3 class="text-2xl font-bold">{title}</h3>
+<a href={linkTo} class="feature flexDirection flex flex-col gap-4">
+  <div class="flex flex-row items-end gap-6">
+    <Icon name={icon} />
+    <h3 class="flex-grow text-2xl font-bold text-center">{title}</h3>
+  </div>
+  <div>
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>
