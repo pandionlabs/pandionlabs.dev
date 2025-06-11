@@ -30,7 +30,7 @@ const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
 <a href={linkTo} class="feature flexDirection flex flex-col gap-4">
   <div class="flex flex-row items-end gap-6">
     <Icon name={icon} />
-    <h3 class="flex-grow text-2xl font-bold text-center">{title}</h3>
+    <h3 class="flex-grow text-center text-2xl font-bold">{title}</h3>
   </div>
   <div>
     <p>
@@ -100,5 +100,10 @@ const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
   :global(.darkmode .feature::before) {
     box-shadow: 0 0 0 6px var(--color-neutral-900);
     background-color: var(--color-neutral-900);
+  }
+  .feature:hover {
+    [data-icon] {
+      animation: boop 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
   }
 </style>

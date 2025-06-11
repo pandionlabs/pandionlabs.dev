@@ -17,17 +17,21 @@ interface Props {
    * @property {string} link - The URL the button should link to.
    * @property {string} linkText - The text to display on the button.
    */
+  title?: string
   button?: ButtonProps
 }
 
-const { button } = Astro.props as Props
+const { button, title } = Astro.props as Props
 ---
 
-<div class="gradient-background container flex flex-col items-center gap-12 rounded-xl p-24">
-  <slot />
+<div class="gradient-background container flex flex-col items-center gap-12 rounded-xl p-12">
+  {title && <h2 class="text-center text-3xl md:text-4xl">{title}</h2>}
+  <p class="mx-16">
+    <slot />
+  </p>
   {
     button && button.link && button.linkText && (
-      <div class="mt-8 flex justify-center">
+      <div class="mt-4 flex justify-center">
         <a href={button.link}>
           {button.linkText}
           <Icon name="lucide:arrow-right" />
@@ -40,14 +44,11 @@ const { button } = Astro.props as Props
   @use '../assets/scss/base/mixins' as *;
 
   .gradient-background {
-    /* position: relative; */
     background-image: linear-gradient(
       315deg,
       light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
       light-dark(var(--color-secondary-100), var(--color-primary-200))
     );
-
-    /* color: var(--color-neutral-900); */
   }
 
   a,

@@ -32,8 +32,8 @@ const {
   data-cal-config={JSON.stringify(config)}
   data-cal-ui-config={JSON.stringify(uiConfig)}
 >
-  <div class="cal-loading-placeholder">
-    <p>Loading calendar...</p>
+  <div class="cal-loading-placeholder flex items-center justify-center">
+    <div class="button">Schedule an appointment</div>
   </div>
 </div>
 
@@ -146,12 +146,7 @@ const {
 
 <style>
   .cal-loading-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 8px;
-    background-color: #f5f5f5;
-    min-height: 400px;
-    color: #666;
+    min-height: 300px;
   }
 </style>

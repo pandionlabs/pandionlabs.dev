@@ -2,65 +2,88 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import Feature from '@components/Feature.astro'
-import Team from '@components/Team.astro'
 import CalEmbed from '@components/CalEmbed.astro'
 import GradientBackground from '@components/GradientBackground.astro'
 import LoremIpsum from '@components/LoremIpsum.astro'
 import { Link } from '@lucide/astro'
 import LineSeparator from '@components/LineSeparator.astro'
+import Team from '@components/Team.astro'
+import Simone from '../assets/images/team/simone.jpg'
+import Sam from '../assets/images/team/sam.png'
+import Anna from '../assets/images/team/anna.png'
 ---
 
 <DefaultLayout title="Pandion Labs - Integrated Nature Analysis">
   <Hero />
   <section class="my-10" id="about">
-    <GradientBackground button={{ link: '/about', linkText: 'Learn more' }}>
-      <h2 class="text-center text-3xl md:text-4xl">About us</h2>
-      <p class="text-xl">
-        Pandion Labs is an applied research consultancy that believes that better code and data are the solution to some
-        of nature's toughest challenges.
-      </p>
-      <p class="text-xl">
-        We provide tailored data processing, production, and reporting support, with the aim of making data more
-        accessible and actionable.
-      </p>
-      <p class="text-xl">
-        We are a team of data scientists, ecologists and researchers building end-to-end solutions to inform
-        sustainability projects, from raw data to dissemination.
-      </p>
+    <GradientBackground title="About us" button={{ link: '/#team', linkText: 'Learn more' }}>
+      Pandion Labs provides tailored data processing, production, and reporting, with the aim of making data more
+      accessible and actionable. We are a team of data scientists, ecologists, software engineers, and researchers
+      building end-to-end solutions to inform sustainability projects, from raw data to dissemination. We believe that
+      better code and data are a critical part of the solution to some of nature’s toughest challenges.
     </GradientBackground>
   </section>
   <section class="container my-24" id="services">
     <h2 class="mb-16 text-6xl">Our services</h2>
-    <div class="grid grid-cols-2 gap-12">
-      <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science">
+    <div class="grid grid-cols-2 gap-16">
+      <Feature icon="lucide:trees" title="Code for Forests" linkTo="forests">
         Precision forestry, forest inventories, and workflow digitalization of the forestry industry. We specialize in
         using remote sensing (LIDAR, spectral imagery, radar) to make forestry more efficient and sustainable
       </Feature>
-      <Feature icon="lucide:trees" title="Code for Forests">
-        <LoremIpsum />
+      <Feature icon="lucide:flower-2" title="Code for Biodiversity" linkTo="biodiversity">
+        From the field to publication, we automate your workflows through the digitalization of biodiversity monitoring.
+        We create platforms for data collection, analysis, and reporting to supercharge your biodiversity initiatives.
       </Feature>
-      <Feature icon="lucide:flower-2" title="Code for Biodiversity">
-        <LoremIpsum />
+      <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science">
+        Using open and reproducible best practices, we turn your scientific code into production ready R and Python
+        packages, websites, and APIs. This is a relatively new field called research software engineering, and
+        essentially combines programming with research. It’s like computer science for scientists.
       </Feature>
-      <Feature icon="lucide:workflow" title="Custom tools for your needs" direction="horizontal">
-        <LoremIpsum />
+      <Feature icon="lucide:workflow" title="Customized Solutions" direction="horizontal" linkTo="custom-solutions">
+        Our team of data scientists, ecologists, and software engineers can develop apps, deep learning models, custom
+        analyses, GIS platforms, or databases. Got a problem? Try us.
       </Feature>
     </div>
   </section>
   <LineSeparator />
   <section class="container my-24" id="contact">
     <div class="flex flex-col items-center gap-4 text-center">
-      <h2 class="text-6xl">Interested in our services?</h2>
-      <p class="text-2xl">Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a></p>
+      <h2 class="text-6xl">Think we can help?</h2>
+      <p class="text-2xl">
+        Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a> or schedule a free consultation
+      </p>
     </div>
-    <div>
-      <p class="text-center text-2xl">or schedule a free consultation</p>
-    </div>
+
     <div class="m-7">
       <CalEmbed calLink="pandionlabs/consultation" elementId="cal-home" />
     </div>
   </section>
-
+  <LineSeparator />
+  <section class="my-24 text-left" id="team">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Who we are</h2>
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+        <div class="space-content">
+          <Team profileImage={Simone} , name="Simone Massaro">
+            <p>MSc Forest and Ecosystem Sciences; BSc Forest and Natural Sciences</p>
+            <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
+          </Team>
+        </div>
+        <div class="space-content">
+          <Team profileImage={Sam} name="Sam Herniman">
+            <p>MSc Forestry and Remote Sensing; BSc Applied Ecology</p>
+            <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
+          </Team>
+        </div>
+        <div class="space-content">
+          <Team profileImage={Anna} name="Anna Dodd">
+            <p>MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science</p>
+            <p class="mt-4">10+ years communications and research experience</p>
+          </Team>
+        </div>
+      </div>
+    </div>
+  </section>
   <style>
     .avatar {
       border: 1px solid var(--border-color-subtle);

@@ -18,20 +18,20 @@ const heroIcons = [
 const features = [
   { iconName: 'lucide:package', text: 'Package and clean your code for publication' },
   { iconName: 'lucide:flask-conical', text: 'Write tests to automatically identify bugs' },
+  { iconName: 'lucide:book-open', text: 'Produce comprehensive documentation' },
   { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
   { iconName: 'lucide:layers', text: "Structure your code so it's easy to maintain in the long-term" },
-  { iconName: 'lucide:bar-chart-2', text: 'Support with data analysis, modelling, statistics and machine learning' },
-  { iconName: 'lucide:pie-chart', text: 'Production of beautiful data visualisations' },
+  { iconName: 'lucide:bar-chart-2', text: 'Support with data analysis, modelling, statistics, and machine learning' },
+  { iconName: 'lucide:pie-chart', text: 'Production of beautiful data visualisations and websites' },
 ]
 ---
 
 <DefaultLayout title="Code for Science">
   <ServicesHero pretitle="Code for" title="SCIENCE" icons={heroIcons}>
-    Bridging the gap between <span class="highlight-word">scientific research</span>
-    and <span class="highlight-word">software engineering </span> excellence
+    You do the science, we do the engineering.
   </ServicesHero>
 
-  <section class="container mt-12">
+  <section class="container my-12">
     <p>
       Open science is no longer an option in the scientific world. Our network of environmental and life scientists
       build the tools you need to solve the world's biggest scientific questions in an open and reproducible way.
@@ -44,18 +44,47 @@ const features = [
     <FeaturesList features={features} />
   </section>
   <LineSeparator />
-  <section id="about us" class="container my-12">
-    <h2>About Us</h2>
+  <section id="about us" class="container my-24">
+    <h2 class="mb-6">The Pandion Labs difference</h2>
     <p>
-      Our values and <LoremIpsum n={30} />
+      At Pandion Labs, we are a team of data scientists, software engineers, ecologists, and researchers building
+      end-to-end solutions to inform sustainability projects, from raw data processing to dissemination. Our primary
+      focus areas are precision forestry, biodiversity monitoring, and quantitative ecology.
     </p>
     <div class="my-12 grid grid-cols-2 gap-12">
       <GradientBorder title="Experience">
-        We bring to the table scientic experience, industry experience and strong software engineering skills. We can
-        relate to your scientific experience and then
+        <ul>
+          <li>
+            We bring over three decades of combined scientific and industry experience, as well as software engineering
+            and data science skills.
+          </li>
+          <li>
+            We can relate to your scientific experience, and we have the business savvy and tech background to
+            supercharge your projects from start to finish.
+          </li>
+          <li>
+            As a small, boutique consultancy, we can provide our clients and partners with one-on-one, personalized
+            solutions that fit your needs.
+          </li>
+        </ul>
       </GradientBorder>
       <GradientBorder title="Values">
-        <LoremIpsum n={20} />
+        <ul>
+          <li>
+            <strong>Science and sustainability first.</strong> We practice scientific integrity and incorporate scientific
+            knowledge and methods at every opportunity. We’ll only work with partners that share our commitment to the scientific
+            method and to sustainable practices.
+          </li>
+          <li>
+            <strong>Honesty.</strong> We don’t shy away from hard truths. If something is impossible, we’ll tell you. If
+            something needs more time, we’ll let you know.
+          </li>
+          <li>
+            <strong>Rigour.</strong> As equal partners in the consultancy, it’s in all of our best interest to be as efficient
+            and hard-working as possible. This means we are dedicated to staying organized, communicative, and on track in
+            terms of timelines and deliverables.
+          </li>
+        </ul>
       </GradientBorder>
     </div>
   </section>
