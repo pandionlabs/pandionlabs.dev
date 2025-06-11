@@ -4,6 +4,8 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import LoremIpsum from '@components/LoremIpsum.astro'
 import ServicesHero from '@components/ServicesHero.astro'
 import FeaturesList from '@components/FeaturesList.astro'
+import LineSeparator from '@components/LineSeparator.astro'
+import Feature from '@components/Feature.astro'
 
 const heroIcons = [
   { name: 'lucide:flask-conical' },
@@ -24,8 +26,8 @@ const features = [
 
 <DefaultLayout title="Code for Science">
   <ServicesHero pretitle="Code for" title="SCIENCE" icons={heroIcons}>
-    <span class="highlight-word">Bridging</span> the gap between scientific <span class="highlight-word">research</span>
-    and <span class="highlight-word">software</span> engineering excellence
+    Bridging the gap between <span class="highlight-word">scientific research</span>
+    and <span class="highlight-word">software engineering </span> excellence
   </ServicesHero>
 
   <section class="container mt-12">
@@ -40,13 +42,21 @@ const features = [
 
     <FeaturesList features={features} />
   </section>
-
+  <LineSeparator />
   <section id="about us" class="container my-8">
     <h2>About Us</h2>
     <p>
       Our values and <LoremIpsum n={30} />
     </p>
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-2">
+      <Feature icon="lucide:trees" title="Experience" direction="horizontal">
+        We bring to the table scientic experience, industry experience and strong software engineering skills. We can
+        relate to your scientific experience and then
+      </Feature>
+      <Feature icon="lucide:flower-2" title="Values" direction="horizontal">
+        <LoremIpsum n={20} />
+      </Feature>
+    </div>
   </section>
-
   <CallToAction />
 </DefaultLayout>
