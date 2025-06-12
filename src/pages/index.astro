@@ -25,7 +25,7 @@ import Anna from '../assets/images/team/anna.png'
   </section>
   <section class="container my-24" id="services">
     <h2 class="mb-16 text-6xl">Our services</h2>
-    <div class="grid grid-cols-2 gap-16">
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
       <Feature icon="lucide:trees" title="Code for Forests" linkTo="forests">
         Precision forestry, forest inventories, and workflow digitalization of the forestry industry. We specialize in
         using remote sensing (LIDAR, spectral imagery, radar) to make forestry more efficient and sustainable.
@@ -63,25 +63,19 @@ import Anna from '../assets/images/team/anna.png'
   <section class="my-24 text-left" id="team">
     <div class="container">
       <h2 class="mb-16 text-6xl">Who we are</h2>
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-        <div class="space-content">
-          <Team profileImage={Simone} , name="Simone Massaro">
-            <p>MSc Forest and Ecosystem Sciences; BSc Forest and Natural Sciences</p>
-            <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
-          </Team>
-        </div>
-        <div class="space-content">
-          <Team profileImage={Sam} name="Sam Herniman">
-            <p>MSc Forestry and Remote Sensing; BSc Applied Ecology</p>
-            <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
-          </Team>
-        </div>
-        <div class="space-content">
-          <Team profileImage={Anna} name="Anna Dodd">
-            <p>MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science</p>
-            <p class="mt-4">10+ years communications and research experience</p>
-          </Team>
-        </div>
+      <div class="grid grid-cols-2 justify-stretch gap-12 md:grid-cols-3">
+        <Team profileImage={Simone} , name="Simone Massaro">
+          <p>MSc Forest and Ecosystem Sciences; <br />BSc Forest and Natural Sciences</p>
+          <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
+        </Team>
+        <Team profileImage={Sam} name="Sam Herniman">
+          <p>MSc Forestry and Remote Sensing; <br />BSc Applied Ecology</p>
+          <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
+        </Team>
+        <Team profileImage={Anna} name="Anna Dodd">
+          <p>MA History of Global Markets; <br />IM Global Markets, Local Creativities; <br />BA Political Science</p>
+          <p class="mt-4">10+ years communications and research experience</p>
+        </Team>
       </div>
     </div>
   </section>

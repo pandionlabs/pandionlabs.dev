@@ -7,6 +7,7 @@ import FeaturesList from '@components/FeaturesList.astro'
 import LineSeparator from '@components/LineSeparator.astro'
 import Feature from '@components/Feature.astro'
 import GradientBorder from '@components/GradientBorder.astro'
+import PandionDifference from '@components/PandionDifference.astro'
 
 const heroIcons = [
   { name: 'lucide:flask-conical' },
@@ -51,59 +52,7 @@ const features = [
       end-to-end solutions to inform sustainability projects, from raw data processing to dissemination. Our primary
       focus areas are precision forestry, biodiversity monitoring, and quantitative ecology.
     </p>
-    <div class="my-12 grid grid-cols-2 gap-12">
-      <GradientBorder title="Experience">
-        <ul>
-          <li>
-            We bring over three decades of combined scientific and industry experience, as well as software engineering
-            and data science skills.
-          </li>
-          <li>
-            We can relate to your scientific experience, and we have the business savvy and tech background to
-            supercharge your projects from start to finish.
-          </li>
-          <li>
-            As a small, boutique consultancy, we can provide our clients and partners with one-on-one, personalized
-            solutions that fit your needs.
-          </li>
-        </ul>
-      </GradientBorder>
-      <GradientBorder title="Values">
-        <ul>
-          <li>
-            <strong>Science and sustainability first.</strong> We practice scientific integrity and incorporate scientific
-            knowledge and methods at every opportunity. We only work with partners that share our commitment to sustainability.
-          </li>
-          <li>
-            <strong>Honesty.</strong> We don’t shy away from hard truths. If something is impossible, we’ll tell you. If
-            something needs more time, we’ll let you know.
-          </li>
-          <li>
-            <strong>Rigour.</strong> As equal partners in the consultancy, we are all dedicated to staying organized, communicative, and
-            maintaining the highest standards of quality.
-          </li>
-        </ul>
-      </GradientBorder>
-    </div>
   </section>
+  <PandionDifference />
   <CallToAction />
 </DefaultLayout>
-
-<style>
-  /* Assuming highlight-word might be part of the subtitle, so keeping its style definition */
-  .highlight-word {
-    position: relative;
-    font-weight: 600;
-  }
-
-  .highlight-word::after {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    border-radius: 1px;
-    background: var(--brand-primary);
-    width: 100%;
-    height: 2px;
-    content: '';
-  }
-</style>

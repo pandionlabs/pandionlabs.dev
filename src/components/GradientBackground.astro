@@ -24,11 +24,11 @@ interface Props {
 const { button, title } = Astro.props as Props
 ---
 
-<div class="gradient-background container flex flex-col items-center gap-12 rounded-xl p-16">
+<div class="gradient-background container flex flex-col items-center gap-12 p-16 lg:rounded-xl">
   {title && <h2 class="text-center text-3xl md:text-4xl">{title}</h2>}
-  <p class="mx-16">
+  <div class="mx-12">
     <slot />
-  </p>
+  </div>
   {
     button && button.link && button.linkText && (
       <div class="mt-4 flex justify-center">
