@@ -5,7 +5,7 @@
   // brand colors (change these to your own brand colors)
   --brand-primary: #01b77e;
   --brand-secondary: #b77e01;
-  --brand-neutral: #b9bec4;
+  --brand-neutral: #fdfbf1;
 
   // pallet brand
   --color-primary-100: oklch(from var(--brand-primary) 90% c h);
@@ -32,7 +32,7 @@
 
   // color scheme
   --foreground-color: light-dark(var(--color-neutral-800), var(--color-neutral-100));
-  --background-color: light-dark(var(--color-neutral-100), var(--color-neutral-900));
+  --background-color: light-dark(var(--color-neutral-200), var(--color-neutral-900));
   --icon-color: light-dark(var(--color-neutral-800), var(--color-neutral-100));
   --link-color: light-dark(var(--color-primary-400), var(--color-secondary-100));
   --link-hover-color: light-dark(var(--color-primary-300), var(--color-secondary-200));

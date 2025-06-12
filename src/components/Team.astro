@@ -5,7 +5,9 @@ const { profileImage, name } = Astro.props
 ---
 
 <Card imageComponent={profileImage} title={name} width="512" height="512" class="team-card">
-  <slot />
+  <div class="text-left">
+    <slot />
+  </div>
 </Card>
 
 <style>
@@ -13,6 +15,7 @@ const { profileImage, name } = Astro.props
     block-size: 521px;
   }
   :global(.team-card .image) {
+    /* filter: grayscale(100%); */
     block-size: 100%;
   }
 </style>

@@ -6,32 +6,44 @@ import FeaturesList from '@components/FeaturesList.astro'
 import LineSeparator from '@components/LineSeparator.astro'
 import GradientBorder from '@components/GradientBorder.astro'
 
-const heroIcons = [{ name: 'lucide:flower-2' }, { name: 'lucide:bug' }, { name: 'lucide:bird' }, { name: 'lucide:map' }]
+const heroIcons = [
+  { name: 'lucide:tree-pine' }, // Forest icon
+  { name: 'lucide:radar' },
+  { name: 'lucide:camera' },
+  { name: 'lucide:database' },
+]
 
 const features = [
-  { iconName: 'lucide:map', text: 'Plan, implement, and carry out field campaigns' },
-  { iconName: 'lucide:dna', text: 'Produce species distribution models from private and open datasets' },
+  { iconName: 'lucide:trees', text: 'Forest inventories based on large scale Airborne Laser Scanning (LiDAR)' },
+  { iconName: 'lucide:scan', text: 'Precision forest inventories from Terrestrial and Mobile Laser Scanners' },
   {
     iconName: 'lucide:camera',
-    text: 'Manage or develop IoT sensors (camera traps, passive bioacoustics, climate dataloggers)',
+    text: 'Drone images processing (tree identification, tree species, dead trees detection)',
   },
-  { iconName: 'lucide:ear', text: 'Process bioacoustic data and develop species detection models' },
-  { iconName: 'lucide:radar', text: 'Integrate remote-sensing data with ground truth datasets and community science' },
-  { iconName: 'lucide:brain', text: 'Build relevant AI, deep learning, and computer vision tools' },
-  { iconName: 'lucide:message-circle', text: 'Provide advice or feedback on methodologies and metrics' },
+  { iconName: 'lucide:satellite', text: 'Satellite Earth Observation models for object detection and classification' },
+  { iconName: 'lucide:map', text: 'Wall-to-wall mapping and GIS solutions' },
+  {
+    iconName: 'lucide:cloud',
+    text: 'Data management, cloud-native geospatial frameworks, and decision support systems',
+  },
 ]
 ---
 
-<DefaultLayout title="Code for Biodiversity">
-  <ServicesHero pretitle="Code for" title="BIODIVERSITY" icons={heroIcons}>
-    Advancing biodiversity research and monitoring with robust code and cutting-edge data solutions.
+<DefaultLayout title="Code for Forests">
+  <ServicesHero pretitle="Code for" title="FORESTS" icons={heroIcons}>
+    Automation for sustainable precision forestry.
   </ServicesHero>
 
   <section class="container my-12">
     <p>
-      From the field to analysis and annual reports, our team of ecological experts offer support for the complete
-      lifecycle of biodiversity projects. Based on your specific project needs for biodiversity monitoring and mapping,
-      we can:
+      Our foresters and data scientists produce forest inventories and conduct precision forestry using a variety of
+      remote sensing and traditional techniques. We process data from terrestrial, aerial and satellite sensors to
+      quantify forest biomass, species diversity, and other key parameters. We specialize in individual tree detection,
+      point cloud segmentation, and using deep learning to produce automated forest models.
+    </p>
+    <p class="mt-4">
+      We can provide end-to-end support with tailored data cleaning, cloud infrastructure, processing, analysis,
+      visualization, and website production. For example:
     </p>
 
     <FeaturesList features={features} />

@@ -6,7 +6,7 @@
 
 body {
   font-weight: 400;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   font-family: var(--font-body);
   font-synthesis: none;
@@ -58,4 +58,8 @@ footer a {
 *:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
+}
+
+p {
+  text-align: justify;
 }

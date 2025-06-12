@@ -42,7 +42,7 @@ const icons: IconDetail[] = [
         </h1>
         <h2 class="text-center text-4xl font-bold md:text-left">Code for Climate. Data for Nature.</h2>
         <p class="text-center text-xl md:text-left">
-          We connect you to nature's systems by bridging the gap between scientific research and software engineering
+          Bridging the gap between science, nature, and software engineering
         </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="#services">
@@ -56,7 +56,7 @@ const icons: IconDetail[] = [
         </div>
       </div>
       <div class="icon-container self-center">
-        <div class="grid grid-cols-2 grid-rows-2 items-center justify-center gap-4">
+        <div class="mx-auto grid w-fit grid-cols-2 grid-rows-2 items-center justify-center gap-8">
           {
             icons.map((icon) => (
               <div class={icon.class || ''}>
@@ -93,15 +93,17 @@ const icons: IconDetail[] = [
       }
 
       .icon-primary {
-        opacity: 0.8;
         /* background-color: var(--color-primary-100); */
         color: var(--color-primary-200);
       }
       .icon-secondary {
         /* filter: grayscale(100%); */
         /* background-color: var(--color-secondary-100); */
-        /* color: var(--color-secondary-200); */
-        opacity: 0.8;
+        /* color: var(--color-secondar-200); */
+      }
+
+      [data-icon] {
+        opacity: 0.75;
       }
 
       /* .icon-wrapper svg {
