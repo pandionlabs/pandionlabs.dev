@@ -25,11 +25,11 @@ const iconSmallSize = {
 const icons: IconDetail[] = [
   // This will be rendered in a 2x2 grid
   // First Row
-  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondar' },
-  { name: 'lucide:bird', ...iconBigSize, class: 'icon-wrapper icon-primary' },
+  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondary order-1' },
+  { name: 'lucide:bird', ...iconBigSize, class: 'icon-wrapper icon-primary order-2' },
   // Second Row
-  { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary' },
-  { name: 'lucide:laptop', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary order-4 lg:order-3' },
+  { name: 'lucide:laptop', ...iconSmallSize, class: 'icon-wrapper icon-secondary order-3 lg:order-3' },
 ]
 ---
 
@@ -42,7 +42,7 @@ const icons: IconDetail[] = [
         </h1>
         <h2 class="text-center text-4xl font-bold md:text-left">Code for Climate. Data for Nature.</h2>
         <p class="text-center text-xl md:text-left">
-          Bridging the gap between science, nature, and software engineering
+          Bridging the gap between science, nature, <br /> and software engineering
         </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="#services">
@@ -55,8 +55,8 @@ const icons: IconDetail[] = [
           </a>
         </div>
       </div>
-      <div class="icon-container self-center justify-self-end">
-        <div class="mx-auto grid w-fit grid-cols-2 grid-rows-2 items-center justify-center gap-8">
+      <div class="icon-container hidden self-center justify-self-start md:block lg:justify-self-end">
+        <div class="mx-auto grid w-fit grid-cols-4 items-center justify-center gap-8 md:grid-cols-4 lg:grid-cols-2">
           {
             icons.map((icon) => (
               <div class={icon.class || ''}>
@@ -65,7 +65,6 @@ const icons: IconDetail[] = [
             ))
           }
         </div>
-        <!-- <Icon name="hero-icon" desc="Nature analysis visualization" width={650} height={400} is:inline /> -->
       </div>
     </div>
 
