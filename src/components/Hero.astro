@@ -23,19 +23,13 @@ const iconSmallSize = {
 }
 
 const icons: IconDetail[] = [
-  // This will be rendered in a 3x3 grid
+  // This will be rendered in a 2x2 grid
   // First Row
-  { name: 'lucide:bar-chart', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
-  { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary' },
-  { name: 'lucide:map', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
-  // Second Row
-  { name: 'lucide:flower-2', ...iconBigSize, class: 'icon-wrapper icon-primary' },
-  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
-  { name: 'lucide:bug', ...iconBigSize, class: 'icon-wrapper icon-primary' },
-  // Third Row
-  { name: 'lucide:laptop', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondar' },
   { name: 'lucide:bird', ...iconBigSize, class: 'icon-wrapper icon-primary' },
-  { name: 'lucide:database', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
+  // Second Row
+  { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary' },
+  { name: 'lucide:laptop', ...iconSmallSize, class: 'icon-wrapper icon-secondary' },
 ]
 ---
 
@@ -61,8 +55,8 @@ const icons: IconDetail[] = [
           </a>
         </div>
       </div>
-      <div class="icon-container">
-        <div class="grid grid-cols-3 grid-rows-3 items-center justify-center gap-4">
+      <div class="icon-container self-center">
+        <div class="grid grid-cols-2 grid-rows-2 items-center justify-center gap-4">
           {
             icons.map((icon) => (
               <div class={icon.class || ''}>
@@ -88,7 +82,7 @@ const icons: IconDetail[] = [
         transition:
           transform var(--animation-speed-fast, 0.2s) ease-in-out,
           box-shadow var(--animation-speed-fast, 0.2s) ease-in-out; // Using variable
-        /* box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12)); // Using variable */
+        box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12)); // Using variable
         border-radius: var(--radius-l, 0.75rem); // Using variable from _root.scss with fallback
         padding: 1.25rem;
       }
@@ -99,18 +93,20 @@ const icons: IconDetail[] = [
       }
 
       .icon-primary {
+        opacity: 0.8;
         /* background-color: var(--color-primary-100); */
         color: var(--color-primary-200);
       }
       .icon-secondary {
         /* filter: grayscale(100%); */
         /* background-color: var(--color-secondary-100); */
-        color: var(--color-secondary-200);
+        /* color: var(--color-secondary-200); */
+        opacity: 0.8;
       }
 
-      .icon-wrapper svg {
+      /* .icon-wrapper svg {
         filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
-      }
+      } */
     </style>
   </div>
 </section>
