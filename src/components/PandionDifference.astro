@@ -1,5 +1,6 @@
 ---
 import GradientBorder from '@components/GradientBorder.astro'
+import IconListItem from '@components/IconListItem.astro'
 ---
 
 <section id="the-pandion-labs-difference" class="container my-24">
@@ -9,38 +10,38 @@ import GradientBorder from '@components/GradientBorder.astro'
     end-to-end solutions to inform sustainability projects, from raw data processing to dissemination. Our primary focus
     areas are precision forestry, biodiversity monitoring, and quantitative ecology.
   </p>
-  <div class="my-12 grid grid-cols-2 gap-12">
+  <div class="my-12 grid grid-cols-1 gap-12 md:grid-cols-2">
     <GradientBorder title="Experience">
-      <ul>
-        <li>
+      <div class="flex flex-1 flex-col justify-between space-y-4">
+        <IconListItem>
           We bring over three decades of combined scientific and industry experience, as well as software engineering
           and data science skills.
-        </li>
-        <li>
+        </IconListItem>
+        <IconListItem>
           We can relate to your scientific experience, and we have the business savvy and tech background to supercharge
           your projects from start to finish.
-        </li>
-        <li>
+        </IconListItem>
+        <IconListItem>
           As a small, boutique consultancy, we can provide our clients and partners with one-on-one, personalized
           solutions that fit your needs.
-        </li>
-      </ul>
+        </IconListItem>
+      </div>
     </GradientBorder>
     <GradientBorder title="Values">
-      <ul>
-        <li>
+      <div class="flex flex-col space-y-4">
+        <IconListItem>
           <strong>Science and sustainability first.</strong> We practice scientific integrity and incorporate scientific
-          knowledge and methods at every opportunity. We only work with partners that share our commitment to sustainability.
-        </li>
-        <li>
-          <strong>Honesty.</strong> We don’t shy away from hard truths. If something is impossible, we’ll tell you. If
-          something needs more time, we’ll let you know.
-        </li>
-        <li>
-          <strong>Rigour.</strong> As equal partners in the consultancy, we are all dedicated to staying organized, communicative, and
-          maintaining the highest standards of quality.
-        </li>
-      </ul>
+          methods at every opportunity. We only work with partners that share our commitment to sustainability.
+        </IconListItem>
+        <IconListItem>
+          <strong>Honesty.</strong> We don’t shy away from complexity. If something is impossible, we’ll tell you. If something
+          needs more time, we’ll let you know, and we’ll be transparent about statistical uncertainty.
+        </IconListItem>
+        <IconListItem>
+          <strong>Rigour.</strong> We ensure that our work is conducted with precision and thoughtfulness to maintain the
+          highest standards of quality.
+        </IconListItem>
+      </div>
     </GradientBorder>
   </div>
 </section>

@@ -17,39 +17,39 @@ import Anna from '../assets/images/team/anna.png'
   <Hero />
   <section class="my-10" id="about">
     <GradientBackground title="About us" button={{ link: '/#team', linkText: 'Learn more' }}>
-      Pandion Labs provides tailored data processing, production, and reporting, with the aim of making data more
-      accessible and actionable. We are a team of data scientists, ecologists, software engineers, and researchers
-      building end-to-end solutions to inform sustainability projects, from raw data to dissemination. We believe that
-      better code and data are a critical part of the solution to some of nature’s toughest challenges.
+      Pandion Labs provides tailored data processing, production, and reporting, with the aim of making ecosystems data
+      more accessible and actionable. We are a team with data science, ecology, software engineering, and research
+      expertise, building end-to-end solutions to inform sustainability projects — from raw input to dissemination. We
+      believe that better data and code can play a critical part in responsible decision-making for nature and the
+      climate.
     </GradientBackground>
   </section>
   <section class="container my-24" id="services">
     <h2 class="mb-16 text-6xl">Our services</h2>
-    <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+    <div class="grid-auto-rows-fr grid grid-cols-1 gap-16 md:grid-cols-2">
       <Feature icon="lucide:trees" title="Code for Forests" linkTo="forests">
         Precision forestry, forest inventories, and workflow digitalization of the forestry industry. We specialize in
         using remote sensing (LIDAR, spectral imagery, radar) to make forestry more efficient and sustainable.
       </Feature>
       <Feature icon="lucide:flower-2" title="Code for Biodiversity" linkTo="biodiversity">
-        From the field to publication, we automate your workflows through the digitalization of biodiversity monitoring.
-        We create platforms for data collection, analysis, and reporting to supercharge your biodiversity initiatives.
+        From the field to publication, we find ways of automating your biodiversity monitoring projects and workflows.
+        We create platforms for data collection, analysis, and reporting to supercharge biodiversity initiatives.
       </Feature>
       <Feature icon="lucide:bar-chart" title="Code for Science" linkTo="science">
-        Using open and reproducible best practices, we turn your scientific code into production ready R and Python
-        packages, websites, and APIs. This is a relatively new field called research software engineering, and
-        essentially combines programming with research. It’s like computer science for scientists.
+        Using open science best practices, we turn code for scientific research into reproducible and production-ready R
+        and Python packages, websites, and APIs. This is programming that can make your research more impactful.
       </Feature>
       <Feature icon="lucide:workflow" title="Customized Solutions" direction="horizontal" linkTo="custom-solutions">
         Our team of data scientists, ecologists, and software engineers can develop apps, deep learning models, custom
-        analyses, GIS platforms, or databases. Got a problem? Try us.
+        analyses, GIS platforms, or databases, making your data accessible with graphics, interactive dashboards, and
+        more.
       </Feature>
     </div>
-    <div class="my-12"></div>
   </section>
   <LineSeparator height="4px" />
   <section class="container my-24" id="contact">
     <div class="flex flex-col items-center gap-4 text-center">
-      <h2 class="text-6xl">Think we can help?</h2>
+      <h2 class="text-6xl">Let's get in touch</h2>
       <p class="text-2xl">
         Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a> or schedule a free consultation
       </p>
@@ -64,18 +64,24 @@ import Anna from '../assets/images/team/anna.png'
     <div class="container">
       <h2 class="mb-16 text-6xl">Who we are</h2>
       <div class="grid grid-cols-2 justify-stretch gap-12 md:grid-cols-3">
-        <Team profileImage={Simone} , name="Simone Massaro">
-          <p>MSc Forest and Ecosystem Sciences; <br />BSc Forest and Natural Sciences</p>
-          <p class="mt-4">Specializing in forestry, natural sciences, data science, AI, software engineering</p>
-        </Team>
-        <Team profileImage={Sam} name="Sam Herniman">
-          <p>MSc Forestry and Remote Sensing; <br />BSc Applied Ecology</p>
-          <p class="mt-4">More than a decade in remote sensing, ecology, machine learning and software development</p>
-        </Team>
-        <Team profileImage={Anna} name="Anna Dodd">
-          <p>MA History of Global Markets; <br />IM Global Markets, Local Creativities; <br />BA Political Science</p>
-          <p class="mt-4">10+ years communications and research experience</p>
-        </Team>
+        <Team
+          profileImage={Simone}
+          name="Simone Massaro"
+          experience="Data science, software engineering, natural science, forestry"
+          education="MSc Forest and Ecosystem Sciences; BSc Forest and Natural Sciences"
+        />
+        <Team
+          profileImage={Sam}
+          name="Sam Herniman"
+          experience="Remote sensing, ecology, machine learning, software development"
+          education="MSc Forestry and Remote Sensing; BSc Applied Ecology"
+        />
+        <Team
+          profileImage={Anna}
+          name="Anna Dodd"
+          experience="Communications, project management, research"
+          education="MA History of Global Markets;IM Global Markets, Local Creativities;BA Political Science"
+        />
       </div>
     </div>
   </section>

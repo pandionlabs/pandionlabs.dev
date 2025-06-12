@@ -2,12 +2,13 @@
 interface Props {
   title?: string
   padding?: boolean
+  class?: string
 }
 
-const { title, padding = true } = Astro.props
+const { title, padding = true, class: className } = Astro.props
 ---
 
-<div class="custom-gradient-border border-radius-[var(--radius-m)] rounded-lg p-[2pt]">
+<div class={`custom-gradient-border border-radius-[var(--radius-m)] rounded-lg p-[2pt] ${className}`}>
   <div
     class={`flex h-full w-full flex-col rounded-[calc(0.5rem-2pt)] bg-(--background-color) overflow-hidden ${padding ? 'p-6' : ''}`}
   >
