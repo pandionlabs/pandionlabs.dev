@@ -1,0 +1,22 @@
+---
+interface Props {
+  height?: string
+  width?: string
+}
+
+const { height = '2px', width = '100%' } = Astro.props
+---
+
+<div class="container my-12">
+  <div class="gradient-separator"></div>
+</div>
+
+<style define:vars={{ height, width }}>
+  .gradient-separator {
+    margin: 1rem 0;
+    border-radius: var(--height);
+    background: linear-gradient(to left, var(--color-primary-100), var(--color-secondary-100));
+    width: var(--width);
+    height: var(--height);
+  }
+</style>

@@ -15,28 +15,40 @@ interface Props {
    * The title to display
    */
   title: string
+  /* Direction: Icon above or on same line of the text */
+  direction?: 'horizontal' | 'vertical'
+  /**
+   * Optional URL to make the feature clickable
+   */
+  linkTo?: string
 }
 
-const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
+const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo }: Props = Astro.props
+const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
 ---
 
-<div class="feature flex flex-col gap-4">
-  <Icon name={icon} />
-  <div class="content">
-    <h3 class="text-2xl font-bold">{title}</h3>
+<a href={linkTo} class="feature flexDirection flex flex-col gap-4">
+  <div class="flex flex-row items-end gap-6">
+    <Icon name={icon} />
+    <h3 class="flex-grow text-center text-2xl font-bold">{title}</h3>
+  </div>
+  <div>
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>
   </div>
-</div>
+</a>
 
 <style lang="scss">
   @use '../assets/scss/base/breakpoint' as *;
 
   .feature {
+    display: flex;
     position: relative;
     padding: var(--space-l);
     inline-size: calc(100% - var(--space-l));
+    color: inherit;
+    text-decoration: none;
 
     > * {
       position: relative;
@@ -55,11 +67,12 @@ const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
 
     &::before {
       z-index: 1;
+      transition: border-width 0.2s ease;
       inset: 0;
-      box-shadow: 0 0 0 6px var(--color-neutral-100);
+      box-shadow: 0 0 0 6px var(--color-neutral-110);
       border: 3px solid var(--color-neutral-700);
       border-radius: var(--radius-l);
-      background-color: var(--color-neutral-100);
+      background-color: var(--color-neutral-110);
     }
 
     &::after {
@@ -67,6 +80,14 @@ const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
       inset: var(--space-m) -0.85rem -0.85rem 1rem;
       border-radius: var(--radius-l);
       background-color: var(--link-color);
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &::before {
+        border-width: 6px;
+      }
     }
   }
 
@@ -79,5 +100,10 @@ const { icon = 'mdi:rocket', title = 'Title' }: Props = Astro.props
   :global(.darkmode .feature::before) {
     box-shadow: 0 0 0 6px var(--color-neutral-900);
     background-color: var(--color-neutral-900);
+  }
+  .feature:hover {
+    [data-icon] {
+      animation: boop 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    }
   }
 </style>

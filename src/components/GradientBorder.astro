@@ -1,0 +1,27 @@
+---
+interface Props {
+  title?: string
+  padding?: boolean
+}
+
+const { title, padding = true } = Astro.props
+---
+
+<div class="custom-gradient-border border-radius-[var(--radius-m)] rounded-lg p-[2pt]">
+  <div
+    class={`flex h-full w-full flex-col rounded-[calc(0.5rem-2pt)] bg-(--background-color) overflow-hidden ${padding ? 'p-6' : ''}`}
+  >
+    {title && <h3 class="mb-6 text-3xl">{title}</h3>}
+    <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
+  </div>
+</div>
+
+<style>
+  .custom-gradient-border {
+    background-image: linear-gradient(
+      315deg,
+      light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
+      light-dark(var(--color-secondary-100), var(--color-primary-200))
+    );
+  }
+</style>

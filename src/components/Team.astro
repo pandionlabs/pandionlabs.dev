@@ -1,9 +1,14 @@
 ---
-import { Card } from 'accessible-astro-components'
+import GradientBorder from '@components/GradientBorder.astro'
+import { Image } from 'astro:assets'
 
 const { profileImage, name } = Astro.props
 ---
 
-<Card imageComponent={profileImage} title={name}>
-  <slot />
-</Card>
+<GradientBorder padding={false}>
+  <Image src={profileImage} alt={name} />
+  <div class="p-6">
+    <h3 class="text-3xl">{name}</h3>
+    <slot />
+  </div>
+</GradientBorder>

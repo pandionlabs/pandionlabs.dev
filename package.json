@@ -1,11 +1,11 @@
 {
-  "name": "accessible-astro-starter",
-  "description": "An Accessible Starter Theme for Astro including several accessibility features and tools to help you build faster.",
+  "name": "pandionlabs.dev",
+  "description": "Pandion Labs website (based on Accessible Astro Starter)",
   "version": "4.1.0",
   "author": "Incluud",
   "license": "MIT",
   "type": "module",
-  "homepage": "https://accessible-astro.netlify.app/",
+  "homepage": "https://pandionlabs.dev",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -28,10 +28,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/incluud/accessible-astro-starter.git"
+    "url": "git+https://github.com/pandionlabs/pandionlabs.dev.git"
   },
   "bugs": {
-    "url": "https://github.com/incluud/accessible-astro-starter/issues"
+    "url": "https://github.com/pandionlabs/pandionlabs.dev/issues"
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.0",

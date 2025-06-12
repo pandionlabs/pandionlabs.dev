@@ -1,0 +1,43 @@
+---
+import CallToAction from '@components/CallToAction.astro'
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import ServicesHero from '@components/ServicesHero.astro'
+import FeaturesList from '@components/FeaturesList.astro'
+import LineSeparator from '@components/LineSeparator.astro'
+import GradientBorder from '@components/GradientBorder.astro'
+import PandionDifference from '@components/PandionDifference.astro'
+
+const heroIcons = [
+  { name: 'lucide:grid-3x3' }, // Custom solutions icon
+  { name: 'lucide:code' },
+  { name: 'lucide:bar-chart-2' },
+  { name: 'lucide:database' },
+]
+
+const features = [
+  { iconName: 'lucide:bar-chart-2', text: 'Data science and data analysis' },
+  { iconName: 'lucide:brain', text: 'Deep Learning model development (Computer Vision, LLM)' },
+  { iconName: 'lucide:layout', text: 'Website and mobile app development' },
+  { iconName: 'lucide:plug', text: 'REST API and backend services' },
+  { iconName: 'lucide:database', text: 'Databases and data management' },
+  { iconName: 'lucide:cloud', text: 'Cloud infrastructure, GIS and spatial data' },
+]
+---
+
+<DefaultLayout title="Customized Solutions">
+  <ServicesHero pretitle="Customized" title="SOLUTIONS" icons={heroIcons}> Got a problem? Try us. </ServicesHero>
+
+  <section class="container my-12">
+    <p>
+      At Pandion Labs, our mission is to make environmental data more accessible. We provide tailored support for
+      quantification, digitalisation, visualisation and advice to inform sustainable decision-making. We can supercharge
+      your data collection workflows, create custom analysis apps, and automate repetitive tasks. We can make your data
+      accessible with beautiful graphics, engaging reports, interactive dashboards, and bespoke APIs.
+    </p>
+
+    <FeaturesList features={features} />
+  </section>
+  <LineSeparator />
+  <PandionDifference />
+  <CallToAction />
+</DefaultLayout>

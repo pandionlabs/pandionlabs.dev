@@ -1,12 +1,12 @@
 ---
 import Navigation from '../components/Navigation.astro'
-import { DarkMode, SkipLink } from 'accessible-astro-components'
+import { SkipLink } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 
 /**
  * Header Component
  *
- * @description A component that displays the header of the website
+ * @description A component that displays the header of the website with updated navigation
  */
 ---
 
@@ -14,22 +14,30 @@ import { Icon } from 'astro-icon/components'
   <SkipLink />
   <Navigation>
     <li class="menu-item">
-      <a href="/">Home</a>
+      <a href="/#about">About</a>
     </li>
-    <li class="menu-item">
-      <a href="/#services">Services</a>
-    </li>
-    <li class="menu-item">
-      <a href="/#team">Our Team</a>
+    <li class="menu-item has-dropdown">
+      <button aria-haspopup="true" aria-expanded="false">
+        Services
+        <Icon name="lucide:chevron-down" size="32" />
+      </button>
+      <ul class="dropdown-menu">
+        <li class="submenu-item">
+          <a href="/science">Science</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/forests">Forest</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/biodiversity">Biodiversity</a>
+        </li>
+        <li class="submenu-item">
+          <a href="/custom-solutions">Customized Solutions</a>
+        </li>
+      </ul>
     </li>
     <li class="menu-item highlight">
-      <a href="/#contact">Contact Us</a>
-    </li>
-    <li class="menu-item type-icon animate-rotate">
-      <DarkMode>
-        <Icon name="lucide:moon" slot="light" />
-        <Icon name="lucide:sun" slot="dark" />
-      </DarkMode>
+      <a href="/#contact">Contact us</a>
     </li>
   </Navigation>
 </header>
@@ -43,6 +51,53 @@ import { Icon } from 'astro-icon/components'
       svg {
         inline-size: 30px;
         block-size: 30px;
+      }
+    }
+
+    .has-dropdown {
+      position: relative;
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        border: 1px solid #ddd;
+        background-color: white;
+        padding: 0;
+        min-width: 200px;
+        list-style: none;
+
+        .submenu-item {
+          padding: 0.5rem 1rem;
+
+          a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+
+            &:hover {
+              background-color: #f4f4f4;
+            }
+          }
+        }
+      }
+
+      &:hover,
+      &:focus-within {
+        .dropdown-menu {
+          display: block;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        border: none;
+        background: none;
       }
     }
   }
