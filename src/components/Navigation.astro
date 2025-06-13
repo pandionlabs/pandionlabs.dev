@@ -10,7 +10,7 @@ import Logo from './Logo.astro'
 ---
 
 <div id="main-navigation" class="py-1">
-  <div class="container">
+  <div class="container justify-end md:justify-between">
     <Logo />
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -221,7 +221,7 @@ import Logo from './Logo.astro'
     > .container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      /* justify-content: space-between; */
       align-items: center;
     }
 

@@ -1,15 +1,35 @@
 ---
 import GradientBorder from '@components/GradientBorder.astro'
-import { Image } from 'astro:assets'
+import { Image, type ImageMetadata } from 'astro:assets'
 
-const { profileImage, name, experience, education } = Astro.props
+// Define props for better type checking and clarity
+interface Props {
+  profileImage: ImageMetadata // astro:assets ImageMetadata
+  name: string
+  experience: string
+  education: string
+}
+
+const { profileImage, name, experience, education } = Astro.props as Props
 ---
 
 <GradientBorder padding={false}>
-  <Image src={profileImage} alt={name} />
-  <div class="flex flex-col p-6">
-    <h3 class="text-3xl">{name}</h3>
-    <p>{experience}</p>
-    <p class="self-end italic">{education}</p>
+  <div class="grid grid-cols-2 items-start justify-items-center gap-4 pb-2 pl-2 md:grid-cols-1 md:pl-0">
+    <div class="order-2 md:order-1">
+      <Image
+        src={profileImage}
+        alt={name}
+        width={profileImage.width}
+        height={profileImage.height}
+        class="aspect-square rounded-(--radius-s) object-cover md:aspect-auto md:w-full md:text-3xl"
+      />
+    </div>
+    <h3
+      class="order-1 self-center justify-self-start text-2xl font-semibold md:order-2 md:w-full md:pt-4 md:pl-4 md:text-3xl"
+    >
+      {name}
+    </h3>
+    <p class="order-3 md:pl-4">{experience}</p>
+    <p class="order-4 pr-2 italic md:pl-4">{education}</p>
   </div>
 </GradientBorder>
