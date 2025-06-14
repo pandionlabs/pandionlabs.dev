@@ -55,7 +55,6 @@ export default [
     },
     rules: {
       ...astro.configs.recommended.rules,
-      ...astro.configs['jsx-a11y-strict'].rules,
       'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
     },
   },

@@ -13,10 +13,10 @@ import { Icon } from 'astro-icon/components'
 <header>
   <SkipLink />
   <Navigation>
-    <li class="menu-item">
+    <li class="menu-item hidden md:block">
       <a href="/#about">About</a>
     </li>
-    <li class="menu-item has-dropdown">
+    <li class="menu-item has-dropdown hidden md:block">
       <button aria-haspopup="true" aria-expanded="false">
         Services
         <Icon name="lucide:chevron-down" size="32" />
@@ -35,6 +35,19 @@ import { Icon } from 'astro-icon/components'
           <a href="/custom-solutions">Customized Solutions</a>
         </li>
       </ul>
+    </li>
+    {/* Mobile Services Flat List - visible on mobile, hidden on md+ */}
+    <li class="menu-item md:hidden">
+      <a href="/science">Science</a>
+    </li>
+    <li class="menu-item md:hidden">
+      <a href="/forests">Forest</a>
+    </li>
+    <li class="menu-item md:hidden">
+      <a href="/biodiversity">Biodiversity</a>
+    </li>
+    <li class="menu-item md:hidden">
+      <a href="/custom-solutions">Customized Solutions</a>
     </li>
     <li class="menu-item highlight">
       <a href="/#contact">Contact us</a>

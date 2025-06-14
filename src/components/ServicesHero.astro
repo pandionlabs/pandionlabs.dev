@@ -52,10 +52,12 @@ const { pretitle, title, icons } = Astro.props
   <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
     <div class="order-1 flex flex-col items-start text-left md:order-1 md:col-span-1 md:row-start-1">
       <h2 class="text-2xl font-light tracking-wide md:text-3xl">{pretitle}</h2>
-      <h1 class="text-gradient-light text-6xl font-bold md:text-7xl">{title}</h1>
+      <h1 class="text-gradient-light text-[12vw] font-bold md:text-7xl">{title}</h1>
     </div>
 
-    <div class="subtitle-text order-2 text-3xl italic md:order-3 md:col-span-2 md:row-start-2 md:mt-8">
+    <div
+      class="subtitle-text order-2 text-left text-2xl italic md:order-3 md:col-span-2 md:row-start-2 md:mt-8 md:text-3xl"
+    >
       <slot />
     </div>
 
