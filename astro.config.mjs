@@ -7,11 +7,13 @@ import { fileURLToPath } from 'url'
 
 import cloudflare from '@astrojs/cloudflare'
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
   site: 'https://next.pandionlabs.dev',
-  integrations: [mdx(), icon(), compress()],
+  integrations: [mdx(), icon(), compress(), react()],
 
   vite: {
     css: {

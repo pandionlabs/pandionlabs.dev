@@ -68,6 +68,9 @@
   --font-size-7: clamp(3.5836rem, 2.9667rem + 3.0674vw, 5.3544rem);
   --font-size-8: clamp(4.2999rem, 3.5601rem + 3.6935vw, 6.6856rem);
 
+  --font-size-09: calc(var(--font-size-0) * 0.9);
+  --font-size-08: calc(var(--font-size-0) * 0.8);
+
   // space
   // @link https://utopia.fyi/space/calculator?c=320,16,1.2,1240,18,1.25,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12
   --space-5xs: clamp(0.1rem, 0.0931rem + 0.1087vw, 0.125rem);

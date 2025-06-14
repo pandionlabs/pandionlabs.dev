@@ -11,6 +11,7 @@ import Team from '@components/Team.astro'
 import Simone from '../assets/images/team/simone.jpg'
 import Sam from '../assets/images/team/sam.png'
 import Anna from '../assets/images/team/anna.png'
+import Cal from '@calcom/embed-react'
 ---
 
 <DefaultLayout title="Pandion Labs - Integrated Nature Analysis">
@@ -56,7 +57,8 @@ import Anna from '../assets/images/team/anna.png'
     </div>
 
     <div class="m-7">
-      <CalEmbed calLink="pandionlabs/consultation" elementId="cal-home" />
+      <!-- <CalEmbed calLink="pandionlabs/consultation" elementId="cal-home" /> -->
+      <Cal calLink="pandionlabs/consultation" config={{ theme: 'light' }} client:idle />
     </div>
   </section>
   <LineSeparator />
@@ -80,7 +82,7 @@ import Anna from '../assets/images/team/anna.png'
           profileImage={Anna}
           name="Anna Dodd"
           experience="Communications, project management, research"
-          education="MA History of Global Markets;IM Global Markets, Local Creativities;BA Political Science"
+          education="MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science"
         />
       </div>
     </div>
