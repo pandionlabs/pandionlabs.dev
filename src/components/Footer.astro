@@ -2,6 +2,7 @@
 import CallToAction from './CallToAction.astro'
 import ExternalLink from './ExternalLink.astro'
 import Logo from './Logo.astro'
+import { Icon } from 'astro-icon/components'
 
 /**
  * Footer Component
@@ -18,6 +19,10 @@ const currentYear = new Date().getFullYear()
       <p>
         &copy; {currentYear} - Pandion Labs
       </p>
+      <a href="https://github.com/pandionlabs/pandionlabs.dev">
+        <Icon name="lucide:github" />
+        <span class="sr-only">Go to the GitHub page</span>
+      </a>
       <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a>
     </div>
   </section>
