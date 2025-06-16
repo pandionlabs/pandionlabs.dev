@@ -7,9 +7,9 @@ import Footer from '../components/Footer.astro'
 
 const {
   title = 'Pandion Labs',
-  description = 'Pandion Labs is an applied research consultancy working at the intersection of data and nature. We advance nature insights by integrating multiple remote-sensing datasets using data science and AI.',
+  description = 'Pandion Labs provides tailored data processing, production, and reporting, with the aim of making ecosystems data more accessible and actionable',
   url = Astro.site,
-  image = 'social-preview-image.png',
+  image = 'pandionlabs_logo_og.png',
   author = 'Pandion Labs',
 } = Astro.props
 ---
@@ -24,7 +24,7 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <script defer data-domain="pandionlabs.dev" src="https://plausible.pandionlabs.dev/js/script.js" is:inline></script>
 
-    <SiteMeta title={title} description={description.substring(0, 100)} url={url} image={image} author={author} />
+    <SiteMeta title={title} description={description.substring(0, 150)} url={url} image={image} author={author} />
   </head>
   <body>
     <Header />
