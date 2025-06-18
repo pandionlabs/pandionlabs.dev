@@ -15,16 +15,13 @@ interface Props {
    * The title to display
    */
   title: string
-  /* Direction: Icon above or on same line of the text */
-  direction?: 'horizontal' | 'vertical'
   /**
    * Optional URL to make the feature clickable
    */
   linkTo?: string
 }
 
-const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo }: Props = Astro.props
-const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
+const { icon = 'mdi:rocket', title = 'Title', linkTo }: Props = Astro.props
 ---
 
 <a href={linkTo} class="feature flexDirection flex flex-col gap-4">
