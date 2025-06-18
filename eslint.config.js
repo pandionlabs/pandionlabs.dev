@@ -5,6 +5,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import tseslint from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import astroParser from 'astro-eslint-parser'
+import reactPlugin from 'eslint-plugin-react'
 
 export default [
   // Ignore patterns
@@ -80,6 +81,7 @@ export default [
     files: ['**/*.jsx'],
     plugins: {
       'jsx-a11y': jsxA11y,
+      react: reactPlugin,
     },
     languageOptions: {
       parserOptions: {
@@ -88,8 +90,16 @@ export default [
         },
       },
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
       ...jsxA11y.configs.strict.rules,
+      ...reactPlugin.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off', // Disable prop-types rule for JSX if not using PropTypes
     },
   },
 
@@ -99,6 +109,7 @@ export default [
     plugins: {
       '@typescript-eslint': tseslint,
       'jsx-a11y': jsxA11y,
+      react: reactPlugin,
     },
     languageOptions: {
       parser: tsParser,
@@ -108,11 +119,20 @@ export default [
         },
       },
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
-      ...tseslint.configs.recommended.rules,
+      ...tseslint.configs.recommended.rules, // TypeScript rules first
       ...jsxA11y.configs.strict.rules,
+      ...reactPlugin.configs.recommended.rules, // Then React specific rules
+      // Override/ensure specific TS-aware rules after spreading recommended sets
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' }],
       '@typescript-eslint/no-non-null-assertion': 'off',
+      'react/react-in-jsx-scope': 'off', // Not needed with new JSX transform
+      'react/prop-types': 'off', // TypeScript handles type checking for props
     },
   },
 ]

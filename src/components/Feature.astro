@@ -15,95 +15,129 @@ interface Props {
    * The title to display
    */
   title: string
-  /* Direction: Icon above or on same line of the text */
-  direction?: 'horizontal' | 'vertical'
   /**
    * Optional URL to make the feature clickable
    */
   linkTo?: string
 }
 
-const { icon = 'mdi:rocket', title = 'Title', direction = 'vertical', linkTo }: Props = Astro.props
-const flexDirection = direction === 'vertical' ? 'flex-col' : 'flex-row'
+const { icon = 'mdi:rocket', title = 'Title', linkTo }: Props = Astro.props
 ---
 
 <a href={linkTo} class="feature flexDirection flex flex-col gap-4">
   <div class="flex flex-row items-end gap-6">
     <Icon name={icon} />
-    <h3 class="flex-grow text-center text-2xl font-bold">{title}</h3>
+    <h3 class="flex-grow self-center text-left text-3xl font-bold">{title}</h3>
   </div>
   <div>
     <p>
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, corporis.</slot>
     </p>
   </div>
-</a>
+  <div class="feature-button mt-auto flex self-center">
+    Learn More
+    <Icon name="lucide:arrow-right" />
+  </div>
 
-<style lang="scss">
-  @use '../assets/scss/base/breakpoint' as *;
+  <style lang="scss">
+    @use '../assets/scss/base/breakpoint' as *;
+    @use '../assets/scss/base/mixins' as *;
 
-  .feature {
-    display: flex;
-    position: relative;
-    padding: var(--space-l);
-    inline-size: calc(100% - var(--space-l));
-    color: inherit;
-    text-decoration: none;
-
-    > * {
+    .feature {
+      display: flex;
       position: relative;
-      z-index: 2;
-    }
+      padding: var(--space-l);
+      inline-size: calc(100% - var(--space-l));
+      color: inherit;
+      text-decoration: none;
 
-    @include breakpoint(xl) {
-      inline-size: 100%;
-    }
+      > * {
+        position: relative;
+        z-index: 2;
+      }
 
-    &::before,
-    &::after {
-      position: absolute;
-      content: '';
-    }
+      @include breakpoint(xl) {
+        inline-size: 100%;
+      }
 
-    &::before {
-      z-index: 1;
-      transition: border-width 0.2s ease;
-      inset: 0;
-      box-shadow: 0 0 0 6px var(--color-neutral-110);
-      border: 3px solid var(--color-neutral-700);
-      border-radius: var(--radius-l);
-      background-color: var(--color-neutral-110);
-    }
-
-    &::after {
-      z-index: 0;
-      inset: var(--space-m) -0.85rem -0.85rem 1rem;
-      border-radius: var(--radius-l);
-      background-color: var(--link-color);
-    }
-
-    &:hover {
-      cursor: pointer;
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+      }
 
       &::before {
-        border-width: 6px;
+        z-index: 1;
+        transition: border-width 0.2s ease;
+        inset: 0;
+        box-shadow: 0 0 0 6px var(--color-neutral-110);
+        border: 3px solid var(--color-neutral-700);
+        border-radius: var(--radius-l);
+        background-color: var(--color-neutral-110);
+      }
+
+      &::after {
+        z-index: 0;
+        inset: var(--space-m) -0.85rem -0.85rem 1rem;
+        border-radius: var(--radius-l);
+        background-color: var(--link-color);
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &::before {
+          border-width: 6px;
+        }
       }
     }
-  }
 
-  :global(.feature [data-icon]) {
-    inline-size: 4rem;
-    block-size: auto;
-    color: var(--link-color);
-  }
-
-  :global(.darkmode .feature::before) {
-    box-shadow: 0 0 0 6px var(--color-neutral-900);
-    background-color: var(--color-neutral-900);
-  }
-  .feature:hover {
-    [data-icon] {
-      animation: boop 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    :global(.feature [data-icon]) {
+      inline-size: 4rem;
+      block-size: auto;
+      color: var(--link-color);
     }
-  }
-</style>
+
+    :global(.darkmode .feature::before) {
+      box-shadow: 0 0 0 6px var(--color-neutral-900);
+      background-color: var(--color-neutral-900);
+    }
+    .feature:hover {
+      [data-icon] {
+        animation: boop 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      }
+    }
+
+    .feature-button {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2xs);
+      border-width: 0px;
+      border-radius: var(--radius-s);
+      background-color: transparent;
+      /* padding: var(--space-s); */
+      color: var(--color-neutral-900);
+      font-weight: 600;
+      text-decoration: none;
+
+      @include text-decoration(transparent, currentColor);
+
+      [data-icon] {
+        transition: translate var(--animation-speed-fast) var(--cubic-bezier);
+        inline-size: 1.15rem;
+        color: black;
+      }
+
+      &:where(:hover, :focus) {
+        /* background-color: var(--color-neutral-900); */
+        /* color: var(--color-neutral-100); */
+        text-decoration: underline;
+
+        [data-icon] {
+          translate: 5px 0;
+          /* color: white; */
+        }
+      }
+    }
+  </style>
+</a>
