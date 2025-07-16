@@ -1,0 +1,44 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import ServicesHero from '@components/ServicesHero.astro'
+import FeaturesList from '@components/FeaturesList.astro'
+import CallToAction from '@components/CallToAction.astro'
+
+const heroIcons = [
+  { name: 'lucide:flask-conical' },
+  { name: 'lucide:code' },
+  { name: 'lucide:bar-chart-2' },
+  { name: 'lucide:database' },
+]
+
+const features = [
+  { iconName: 'lucide:package', text: 'Package and clean your code for publication' },
+  { iconName: 'lucide:flask-conical', text: 'Write tests to automatically identify bugs' },
+  { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
+  { iconName: 'lucide:layers', text: "Structure your code so it's easy to maintain in the long-term" },
+]
+---
+
+<DefaultLayout title="ECOLOG-L" showCallToAction={false}>
+  <ServicesHero pretitle="Code for" title="ECOLOG Scientist" icons={heroIcons}>
+    Want to make an R or Python package?
+  </ServicesHero>
+
+  <section class="container my-12">
+    <p class="mt-8">
+      As research ecologists and foresters with expertise in software engineering, we understand that open science has
+      become a standard requirement across projects, often mandated by funders. We recognize the incredible impact that
+      more open and reproducible projects can have in combating biodiversity loss and climate change. That's why we're
+      passionate about helping fellow scientists who may not have extensive software engineering experience to release
+      their code and tools to reproducible, open standards. Whether you need to publish an R package, Python module, or
+      standalone tool but lack the time or technical expertise to get it out there, we're here to bridge that gap and
+      help advance open science in our field.
+    </p>
+
+    <FeaturesList features={features} />
+  </section>
+  <CallToAction title="Our offer to ECOLOG" link="mailto:ecolog@pandionlabs.dev" linkText="Email us">
+    As our contribution back to the community we are having a special offer for ECOLOG scientists, we are offering our
+    services <span class="font-bold"> free of charge </span>for the first 3 months.
+  </CallToAction>
+</DefaultLayout>
