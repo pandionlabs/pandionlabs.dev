@@ -30,6 +30,9 @@ const { title = "Let's get in touch", link = '/#contact', linkText = 'Contact us
 <div class="container">
   <div class="call-to-action mt-16 mb-32 flex flex-col items-center gap-12 rounded-xl px-12 py-20 md:px-24">
     <h2 class="text-center text-3xl md:text-6xl">{title}</h2>
+    <div class="text-center">
+      <slot />
+    </div>
     <a href={link} class="text-center text-2xl">
       {linkText}
       <Icon name="lucide:arrow-right" />
