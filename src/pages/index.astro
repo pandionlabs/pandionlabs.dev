@@ -11,7 +11,7 @@ import Sam from '../assets/images/team/sam.png'
 import Anna from '../assets/images/team/anna.png'
 ---
 
-<DefaultLayout title="Pandion Labs">
+<DefaultLayout title="Pandion Labs" showCallToAction={false}>
   <Hero />
   <section class="my-10" id="about">
     <GradientBackground title="About us" button={{ link: '/#team', linkText: 'Learn more' }}>
@@ -81,6 +81,19 @@ import Anna from '../assets/images/team/anna.png'
           education="MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science"
         />
       </div>
+    </div>
+  </section>
+  <LineSeparator />
+  <section class="container my-24" id="contact">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <h2 class="text-6xl">Let's get in touch</h2>
+      <p class="text-2xl">
+        Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a> or schedule a free consultation
+      </p>
+    </div>
+
+    <div class="m-7">
+      <CalEmbed client:idle />
     </div>
   </section>
   <style>

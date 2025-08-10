@@ -7,11 +7,12 @@ import { Icon } from 'astro-icon/components'
  *
  * @description A component that displays the footer of the website
  */
+const { showCallToAction = true } = Astro.props
 const currentYear = new Date().getFullYear()
 ---
 
 <footer>
-  <CallToAction />
+  {showCallToAction && <CallToAction />}
   <section class="py-8">
     <div class="container flex flex-row justify-center gap-4 md:justify-around">
       <p>
