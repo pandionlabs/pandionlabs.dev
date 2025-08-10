@@ -8,26 +8,28 @@ export interface FeatureItem {
 
 export interface Props {
   features: FeatureItem[]
+  nCols?: number
+  iconColor?: string
 }
 
-const { features } = Astro.props
+const { features, nCols = 2, iconColor = 'var(--brand-primary)' } = Astro.props
 ---
 
-<ul class="feature-list mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
+<ul class:list={['feature-list', 'mt-12', 'grid', 'grid-cols-1', 'gap-4', `md:grid-cols-${nCols}`]}>
   {
     features.map((feature) => (
       <li class="flex items-center gap-3">
         <span class="feature-icon mt-1 flex-shrink-0">
-          <Icon name={feature.iconName} width="36" height="36" />
+          <Icon name={feature.iconName} width="45" height="45" />
         </span>
-        <span class="flex-shrink-1">{feature.text}</span>
+        <span class="flex-shrink-1" set:html={feature.text} />
       </li>
     ))
   }
 </ul>
 
-<style>
+<style define:vars={{ 'icon-color': iconColor }}>
   .feature-icon [data-icon] {
-    color: var(--brand-primary);
+    color: var(--icon-color);
   }
 </style>

@@ -11,6 +11,7 @@ const {
   url = Astro.site,
   image = 'pandionlabs_logo_og.png',
   author = 'Pandion Labs',
+  showCallToAction = true,
 } = Astro.props
 ---
 
@@ -32,7 +33,7 @@ const {
     <main id="main-content" transition:animate="fade">
       <slot />
     </main>
-    <Footer />
+    <Footer {showCallToAction} />
     <style lang="scss" is:global>
       // sticky footer on low content pages
       html,

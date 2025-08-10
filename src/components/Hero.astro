@@ -4,6 +4,8 @@ import { Icon } from 'astro-icon/components'
 interface IconDetail {
   /** The name of the icon (e.g., from an icon pack recognized by astro-icon). */
   name: string
+  /** The link to navigate to when the icon is clicked. */
+  link: string
   /** The width of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). */
   width?: string | number
   /** The height of the icon. Can be a string (e.g., "24px") or a number (e.g., 24). */
@@ -25,11 +27,16 @@ const iconSmallSize = {
 const icons: IconDetail[] = [
   // This will be rendered in a 2x2 grid
   // First Row
-  { name: 'lucide:code', ...iconSmallSize, class: 'icon-wrapper icon-secondary order-1' },
-  { name: 'lucide:bird', ...iconBigSize, class: 'icon-wrapper icon-primary order-2' },
+  { name: 'lucide:bar-chart', link: '/science', ...iconSmallSize, class: 'icon-wrapper icon-secondary order-1' },
+  { name: 'lucide:flower-2', link: '/biodiversity', ...iconBigSize, class: 'icon-wrapper icon-primary order-2' },
   // Second Row
-  { name: 'lucide:trees', ...iconBigSize, class: 'icon-wrapper icon-primary order-4 lg:order-3' },
-  { name: 'lucide:laptop', ...iconSmallSize, class: 'icon-wrapper icon-secondary order-3 lg:order-3' },
+  { name: 'lucide:trees', link: 'forest', ...iconBigSize, class: 'icon-wrapper icon-primary order-4 lg:order-3' },
+  {
+    name: 'lucide:workflow',
+    link: 'custom-solutions',
+    ...iconSmallSize,
+    class: 'icon-wrapper icon-secondary order-3 lg:order-3',
+  },
 ]
 ---
 
@@ -37,12 +44,12 @@ const icons: IconDetail[] = [
   <div class="container">
     <div class="grid grid-cols-1 items-end gap-24 lg:grid-cols-2">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h2 class="text-center text-4xl font-bold md:text-left">Better Software <br />for Science and Nature</h2>
+        <h2 class="text-center text-3xl font-light md:text-left">Software and nature <br />expertise combined</h2>
         <h1 class="justify-start text-center text-6xl font-bold md:text-left lg:text-7xl">
           <span class="text-gradient-light">PANDION LABS</span>
         </h1>
         <p class="text-center text-xl md:text-left">
-          We increase the impact of science and nature projects <br /> through modern software engineering
+          We increase the impact and efficiency of science and nature projects through modern software engineering.
         </p>
         <div class="flex flex-col gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="#services">
@@ -59,9 +66,9 @@ const icons: IconDetail[] = [
         <div class="mx-auto grid w-fit grid-cols-4 items-center justify-center gap-8 md:grid-cols-4 lg:grid-cols-2">
           {
             icons.map((icon) => (
-              <div class={icon.class || ''}>
+              <a class={icon.class || ''} href={icon.link}>
                 <Icon name={icon.name} width={icon.width} height={icon.height} />
-              </div>
+              </a>
             ))
           }
         </div>
@@ -73,36 +80,29 @@ const icons: IconDetail[] = [
         text-wrap: unset;
       }
 
+      a {
+        color: inherit;
+      }
+
       .icon-wrapper {
-        /* display: flex; */
-        /* justify-content: center;
-        align-items: center; */
         place-self: center;
-        transition:
-          transform var(--animation-speed-fast, 0.2s) ease-in-out,
-          box-shadow var(--animation-speed-fast, 0.2s) ease-in-out; // Using variable
-        box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12)); // Using variable
-        border-radius: var(--radius-l, 0.75rem); // Using variable from _root.scss with fallback
+        box-shadow: var(--elevation-3, 0 1px 3px rgba(0 0 0 / 0.12));
+        border-radius: var(--radius-l, 0.75rem);
         padding: 1.25rem;
       }
 
       .icon-primary {
-        /* background-color: var(--color-primary-100); */
         color: var(--color-primary-200);
       }
       .icon-secondary {
-        /* filter: grayscale(100%); */
-        /* background-color: var(--color-secondary-100); */
-        /* color: var(--color-secondar-200); */
+        /* use default font color */
       }
-
+      .icon-wrapper:hover {
+        transform: scale(1.08);
+      }
       [data-icon] {
         opacity: 0.75;
       }
-
-      /* .icon-wrapper svg {
-        filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
-      } */
     </style>
   </div>
 </section>
