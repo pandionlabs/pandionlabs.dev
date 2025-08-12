@@ -44,6 +44,8 @@ const { button, title } = Astro.props as Props
   @use '../assets/scss/base/mixins' as *;
 
   .gradient-background {
+    outline: 1px solid var(--color-neutral-900);
+    outline-offset: -10px;
     background-image: linear-gradient(
       315deg,
       light-dark(var(--color-primary-100), var(--color-secondary-100)) 25%,
