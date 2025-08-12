@@ -20,8 +20,11 @@ const features = [
   { iconName: 'lucide:book-open', text: 'Produce comprehensive documentation' },
   { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
   { iconName: 'lucide:layers', text: "Structure your code so it's easy to maintain in the long-term" },
-  { iconName: 'lucide:bar-chart-2', text: 'Support with data analysis, modelling, statistics, and machine learning' },
-  { iconName: 'lucide:pie-chart', text: 'Production of beautiful data visualisations and websites' },
+  {
+    iconName: 'lucide:bar-chart-2',
+    text: 'Provide support with data analysis, modelling, statistics, and machine learning',
+  },
+  { iconName: 'lucide:pie-chart', text: 'Create beautiful and accessible data visualisations and websites' },
 ]
 const features_what = [
   {
@@ -41,21 +44,22 @@ const features_what = [
 
 <DefaultLayout title="Code for Science">
   <ServicesHero pretitle="Code for" title="SCIENCE" icons={heroIcons}>
-    Increase the impact and efficiency of your research
+    Maximise the impact and efficiency of your research
   </ServicesHero>
 
   <section class="container my-12">
     <p>
-      The amount of data required to do science is only increasing together with the open science and focus on
-      reproducibility. Processing this data requires custom softwares. However, to be a good scientist you need to be
-      highly specialized in your field. Usually, this means that you cannot also be a professional software engineer and
-      this negatively impacts the research.
+      Data and science go hand-in-hand, and as we see an increased focus on open science and reproducibility, data has
+      never been more important. We have access to more data than ever before, but processing such large amounts remains
+      a core problem for scientists. You need custom software, coding skills, and infinite time, which, let’s be honest,
+      is pretty unrealistic.
     </p><p>
-      Drawing from our research and coding backgrounds, we provide research software engineering to transform your
-      scientific code. We improve the reliability, speed, quality, and reproducibility of your code, helping to bridge
-      the gap between your scientific research and the latest innovations in software engineering.
+      Pandion takes some of that pressure away. Drawing from our background in research and coding, we provide research
+      software engineering (RSE) to transform your scientific code for the better. We improve the reliability, speed,
+      quality, and reproducibility of your code, helping to bridge the gap between your scientific research and the
+      latest innovations in software engineering.
     </p>
-    <p>There are concrete ways that we can bring your research to the next levels:</p>
+    <p>There are concrete ways that we can bring your research to the next level:</p>
 
     <div class="md:px-[10vh]">
       <FeaturesList features={features_what} nCols={1} />
