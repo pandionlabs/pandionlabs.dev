@@ -5,12 +5,34 @@ import SiteMeta from '../components/SiteMeta.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
+/**
+ * DefaultLayout Component
+ *
+ * @description The default layout component that wraps all pages
+ * @param {string} title - The page title
+ * @param {string} description - The page description
+ * @param {string} url - The page URL
+ * @param {string} image - The page image for social sharing
+ * @param {string} author - The page author
+ * @param {boolean} showCallToAction - Whether to show the call to action in the footer (default: true)
+ */
+
+export interface Props {
+  title?: string
+  description?: string
+  url?: string
+  image?: string
+  author?: string
+  showCallToAction?: boolean
+}
+
 const {
   title = 'Pandion Labs',
   description = 'Pandion Labs provides tailored data processing, production, and reporting, with the aim of making ecosystems data more accessible and actionable',
   url = Astro.site,
   image = 'pandionlabs_logo_og.png',
   author = 'Pandion Labs',
+  showCallToAction = true,
 } = Astro.props
 ---
 
@@ -32,7 +54,7 @@ const {
     <main id="main-content" transition:animate="fade">
       <slot />
     </main>
-    <Footer />
+    <Footer showCallToAction={showCallToAction} />
     <style lang="scss" is:global>
       // sticky footer on low content pages
       html,
