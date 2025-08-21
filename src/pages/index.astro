@@ -11,21 +11,21 @@ import Sam from '../assets/images/team/sam.png'
 import Anna from '../assets/images/team/anna.png'
 ---
 
-<DefaultLayout title="Pandion Labs">
+<DefaultLayout title="Pandion Labs" showCallToAction={false}>
   <Hero />
   <section class="my-10" id="about">
-    <GradientBackground title="About us" button={{ link: '/#team', linkText: 'Learn more' }}>
-      Pandion Labs provides tailored data processing, production, and reporting, with the aim of making ecosystems data
-      more accessible and actionable. We are a team with data science, ecology, software engineering, and research
-      expertise, building end-to-end solutions to inform sustainability projects — from raw input to dissemination. We
-      believe that better data and code can play a critical part in responsible decision-making for nature and the
-      climate.
+    <GradientBackground title="About us" button={{ link: '/#team', linkText: 'Meet the team' }}>
+      Pandion Labs is a digital solutions provider y that applies data science and software engineering best practices
+      to nature — namely the disciplines of forestry, biodiversity, and natural sciences. We enable companies,
+      organizations and individuals to embrace digital transformation and increase the impact and efficiency of their
+      activities and projects. Whatever the challenge, we provide your team with the technological solutions to make
+      your sustainability efforts count, and in this time of digitalization, that’s never been more important.
     </GradientBackground>
   </section>
   <section class="container my-24" id="services">
     <h2 class="mb-16 text-6xl">Our services</h2>
     <div class="grid-auto-rows-fr grid grid-cols-1 justify-items-center gap-16 md:grid-cols-2">
-      <Feature icon="lucide:trees" title="Code for Forests" linkTo="forests">
+      <Feature icon="lucide:trees" title="Code for Forests" linkTo="forest">
         Precision forestry, forest inventories, and workflow digitalization of the forestry industry. We specialize in
         using remote sensing (LIDAR, spectral imagery, radar) to make forestry more efficient and sustainable.
       </Feature>
@@ -37,7 +37,7 @@ import Anna from '../assets/images/team/anna.png'
         Using open science best practices, we turn code for scientific research into reproducible and production-ready R
         and Python packages, websites, and APIs. This is programming that can make your research more impactful.
       </Feature>
-      <Feature icon="lucide:workflow" title="Customized Solutions" direction="horizontal" linkTo="custom-solutions">
+      <Feature icon="lucide:workflow" title="Customized Solutions" linkTo="custom-solutions">
         Our team of data scientists, ecologists, and software engineers can develop apps, deep learning models, custom
         analyses, GIS platforms, or databases, making your data accessible with graphics, interactive dashboards, and
         more.
@@ -45,19 +45,7 @@ import Anna from '../assets/images/team/anna.png'
     </div>
   </section>
   <LineSeparator height="4px" />
-  <section class="container my-24" id="contact">
-    <div class="flex flex-col items-center gap-4 text-center">
-      <h2 class="text-6xl">Let's get in touch</h2>
-      <p class="text-2xl">
-        Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a> or schedule a free consultation
-      </p>
-    </div>
 
-    <div class="m-7">
-      <CalEmbed client:idle />
-    </div>
-  </section>
-  <LineSeparator />
   <section class="my-24 text-left" id="team">
     <div class="container">
       <h2 class="mb-16 text-6xl">Who we are</h2>
@@ -81,6 +69,19 @@ import Anna from '../assets/images/team/anna.png'
           education="MA History of Global Markets; IM Global Markets, Local Creativities; BA Political Science"
         />
       </div>
+    </div>
+  </section>
+  <LineSeparator />
+  <section class="container my-24" id="contact">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <h2 class="text-6xl">Let's get in touch</h2>
+      <p class="text-2xl">
+        Email us at <a href="mailto:hello@pandionlabs.dev">hello@pandionlabs.dev</a> or schedule a free consultation
+      </p>
+    </div>
+
+    <div class="m-7">
+      <CalEmbed client:idle />
     </div>
   </section>
   <style>
