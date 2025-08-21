@@ -1,0 +1,62 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import ServicesHero from '@components/ServicesHero.astro'
+import FeaturesList from '@components/FeaturesList.astro'
+import CallToAction from '@components/CallToAction.astro'
+
+const heroIcons = [
+  { name: 'lucide:flask-conical' },
+  { name: 'lucide:code' },
+  { name: 'lucide:bar-chart-2' },
+  { name: 'lucide:database' },
+]
+
+const features = [
+  { iconName: 'lucide:package', text: 'Package and clean your code for publication' },
+  { iconName: 'lucide:flask-conical', text: 'Write tests to automatically identify bugs' },
+  { iconName: 'lucide:zap', text: 'Improve efficiency and speed' },
+  { iconName: 'lucide:layers', text: "Structure your code so it's easy to maintain in the long-term" },
+]
+---
+
+<DefaultLayout title="ECOLOG-L" showCallToAction={false}>
+  <ServicesHero pretitle="Code for" title="ecologists" icons={heroIcons}>
+      We clean, verify, and package your code for stronger impact and reliability
+  </ServicesHero>
+
+  <section class="container my-12">
+    <p class="mt-8"></p>
+      As research ecologists and envrionmentalists with expertise in software engineering, we understand that open science has
+      become a standard requirement across projects, often mandated by funders. Having more open and reproducible
+      projects is an incredible tool in our work as ecologists to combat biodiversity loss and climate change. However,
+      we recognize that scientists are often not given the time and the resources to release their code and tools to
+      reproducible, open standards.
+    </p>
+    <p class="mt-8">
+      Recently, the three of us at Pandion Labs, have been considering the idea of helping other scientists, who aren't
+      necessarily as good at software engineering, release their code to reproducible, open standards as R and Python
+      packages, or even standalone tools. However, we are not sure what the most impactful way to do this would be, are
+      not sure how much involvement would be most helpful, and don't know if we can make a living while doing this.
+    </p>
+    <p class="mt-8">
+      We would love to find a few researchers who think they could use our help, to have a trial run at doing this. That
+      would help us figure out how much work each project might take and show us some of the pitfalls we might run into
+      along the way.
+    </p>
+    <p class="mt-8">
+      If you have some code that you would love to publish, but just don't have time to get it out there, send us an
+      email with a couple of sentences about your project and some information about the current state of your code. We
+      are happy to work with researchers of any skill level, whether its your very first coding project, with a single
+      script, or you're a seasoned scientist looking to optimize an extensive codebase.
+    </p>
+    <p class="mt-8">
+      If this sort of thing interests you, or you just have some advice for us, please reach
+      out using the email below.
+    </p>
+
+    <FeaturesList features={features} />
+  </section>
+  <CallToAction title="Interested in releasing your code as an open science package or tool?" link="mailto:ecolog@pandionlabs.dev" linkText="Email us">
+     Hit us up with an email!
+  </CallToAction>
+</DefaultLayout>
