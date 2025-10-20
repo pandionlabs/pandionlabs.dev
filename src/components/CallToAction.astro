@@ -24,7 +24,7 @@ interface Props {
   linkText?: string
 }
 
-const { title = "Let's get in touch", link = '/#contact', linkText = 'Contact us' } = Astro.props
+const { title = "Let's get in touch", link = 'mailto:hello@pandionlabs.dev', linkText = 'Email us' } = Astro.props
 ---
 
 <div class="container">
@@ -33,9 +33,9 @@ const { title = "Let's get in touch", link = '/#contact', linkText = 'Contact us
     <div class="text-center">
       <slot />
     </div>
-    <a href={link} class="text-center text-2xl">
+    <a href={link} class="btn text-center text-2xl">
       {linkText}
-      <Icon name="lucide:arrow-right" />
+      <Icon name="lucide:mail" />
     </a>
   </div>
 </div>
@@ -54,8 +54,8 @@ const { title = "Let's get in touch", link = '/#contact', linkText = 'Contact us
     color: var(--color-neutral-900);
   }
 
-  a,
-  a:visited {
+  .btn,
+  a.btn:visited {
     display: flex;
     align-items: center;
     gap: var(--space-2xs);
