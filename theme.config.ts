@@ -1,6 +1,6 @@
 import { defineThemeConfig } from '@utils/defineThemeConfig'
 import previewImage from '@assets/img/social-preview-image.png'
-import logoImage from '@assets/img/logo.png'
+import logoImage from '@assets/img/aster logo v2.svg'
 
 export default defineThemeConfig({
   name: '',
